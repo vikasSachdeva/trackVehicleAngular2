@@ -1,0 +1,41 @@
+<ion-menu [content]="content" type="reveal" [ngClass]="{'logged-in':loggedInUser.email}">
+    <ion-header>
+        <ion-toolbar class="menuHeader">
+            <div class="item-bg">
+                <img [src]="(loggedInUser.picture)?sanitizer.bypassSecurityTrustUrl(loggedInUser.picture):'img/dummyImage.jpg'">
+                
+            </div>
+            <div class="pos-rlt" padding-md>
+                <ion-avatar item-left menuClose (click)="loggedInUser.email?editProfile():''" class="pointer">
+                    <img [src]="(loggedInUser.picture)?sanitizer.bypassSecurityTrustUrl(loggedInUser.picture):'img/dummyImage.jpg'" class="img-circle">
+                    <ion-icon ngHide="user.picture" ios="ios-person" md="md-person" style="font-size:91px; margin-top: -3px;" color="primary"></ion-icon>
+                </ion-avatar>
+                <ion-title *ngIf="loggedInUser.role != 'vendor'" padding-v-md>
+                    {{loggedInUser.name}}
+                    <p>{{loggedInUser.role}}</p>
+                </ion-title>
+                <ion-title *ngIf="loggedInUser.role == 'vendor'" padding-v-md>
+                    {{loggedInUser.contact_person}}
+                    <p>{{loggedInUser.name}} </p>
+                    <p>{{loggedInUser.role}}</p>
+                </ion-title>
+            </div>
+        </ion-toolbar>
+    </ion-header>
+    <!--<ion-content [ngStyle]="{'background': colorLuminance(color, pages.indexOf(pages[pages.length -1])*3, true)}">-->
+    <ion-content>
+        <ion-list class="menu">
+            <!--<ion-list class="menu" [ngStyle]="{'background': colorLuminance(color, pages.length*3, true)}">-->
+            <!--<div class="item" menuClose *ngFor="let page of pages; let i= index;" (click)="openPage(page)" [ngStyle]="{'background': colorLuminance(color, i*3, true), 'height': ((100/pages.length) - .2) + '%'}">-->
+            <div class="item pointer" padding-v-xs menuClose *ngFor="let page of pages; let i= index;" (click)="openPage(page, i)" [ngClass]="{'active':selectedIndex==i, 'inactive':selectedIndex!=i}">
+                <img [src]="sanitizer.bypassSecurityTrustUrl(page.icon)" *ngIf="page.image" />
+                <div class="text-left">
+                    <!--<ion-icon class="pull-left" color="primary" padding-r-md *ngIf="!page.image" [name]="page.icon" [ngStyle]="{'font-size': 2 + 'rem'}"></ion-icon>-->
+                    <ion-icon class="pull-left" [ngClass]="page.faIcon" color="primary" padding-r-md *ngIf="!page.image" [name]="page.faIcon!=''?page.faIcon:page.icon"></ion-icon>
+                    <p color="dark" padding-v-xs> {{page.title}}</p>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav [ngClass]="{'logged-in':loggedInUser.email}" [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

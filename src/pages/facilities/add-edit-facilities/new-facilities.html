@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>{{title}}</ion-title>
+
+        <!--<ion-buttons end>
+      <button ion-button>
+        <ion-icon name="md-person"></ion-icon>
+      </button>
+    </ion-buttons>-->
+
+        <ion-buttons end>
+            <button ion-button>
+            <ion-icon name="notifications" color="yellow"></ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content no-margin>
+    <div class="md-card-container">
+        <form [formGroup]="formFields">
+            <div class="custom-card">
+                <ion-item padding-v-lg padding-h-lg>
+                    <ion-label floating><i class="fa fa-user " aria-hidden="true"></i> Name</ion-label>
+                    <ion-input type="text" left text-left [(ngModel)]="facility.plant_name" name="plant_name" formControlName="plant_name" colo="silver-grey"></ion-input>
+                </ion-item>
+
+                <ion-item padding-v-lg padding-h-lg>
+                    <ion-label floating><i class="fa fa-user " aria-hidden="true"></i> Code</ion-label>
+                    <ion-input type="text" left text-left [(ngModel)]="facility.plant_code" name="plant_code" formControlName="plant_code" colo="silver-grey"></ion-input>
+                </ion-item>
+
+
+                <ion-item padding-v-lg padding-h-lg>
+                    <ion-label floating><i class="fa fa-address-book-o" aria-hidden="true"></i> Address</ion-label>
+                    <ion-textarea left text-left [(ngModel)]="facility.address" name="address" formControlName="address"></ion-textarea>
+                </ion-item>
+
+                <ion-item padding-v-lg padding-h-lg>
+                    <ion-label floating><i class="fa fa-check-circle " aria-hidden="true"></i> State </ion-label>
+                    <ion-input type="text" left text-left [(ngModel)]="facility.state" name="state" formControlName="state" colo="silver-grey"></ion-input>
+                </ion-item>
+
+                <ion-item padding-v-lg padding-h-lg>
+                    <ion-label><i class="fa fa-check-circle" aria-hidden="true"></i> City</ion-label>
+                    <ion-select [(ngModel)]="facility.city" name="city" formControlName="city" class="drop-arrow">
+                        <ion-option *ngFor="let city of (commonServices.cities | searchAnywhere:'orderBy':'name')" [value]="city.name" [selected]="city.name==facility.city">
+                            {{city.name}}</ion-option>
+                    </ion-select>
+                </ion-item>
+
+            </div>
+        </form>
+
+    </div>
+</ion-content>
+<ion-footer padding-h-xs><button ion-button block [disabled]="!formFields.valid" (click)="saveFacility()">Save</button></ion-footer>

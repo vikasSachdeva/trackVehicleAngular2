@@ -1,0 +1,199 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Vehicle Status</ion-title>
+        <ion-buttons end>
+
+        </ion-buttons>
+        <!--<ion-buttons end>
+      <button ion-button>
+        <ion-icon name="md-person"></ion-icon>
+      </button>
+    </ion-buttons>-->
+        <ion-buttons end>
+            <button ion-button>
+            <ion-icon name="notifications" color="yellow"></ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+
+
+
+</ion-header>
+
+
+<ion-content no-margin>
+    <ion-fab right top>
+        <button ion-fab [navPush]="detailMap" color="green" [navParams]="vehicle_detail"><ion-icon name="pin"></ion-icon></button>
+    </ion-fab>
+    <div class="header-bg">
+        <div padding-h-lg>
+            <div style="max-width:550px; margin:auto">
+                <div class="max-container list-border" padding-v-sm>
+                    <div class="row">
+                        <h3 color="light" no-margin font-md (click)="togglePerform()" class="pointer">
+                            <div class="col-xs-11 col-sm-11">
+                                <ion-icon class="fa-lg pointer" [ngClass]="{'fa-plus-square-o': !toggle,'fa-minus-square-o': toggle }" style="font-family: FontAwesome!important" aria-hidden="true" text-right margin-r-sm></ion-icon>
+                                <span color="yellow">{{vehicle_detail.driver_name}}</span>
+                                <span color="secondary" font-md padding-h-sm><i class="fa fa-mobile fa-lg" color="light" aria-hidden="true"></i> {{vehicle_detail.driver_number}}</span>
+                            </div>
+
+                            <!--<span>{{vehicle_detail.vehicle_no}}</span>-->
+                            <!--<ion-badge item-right color="yellow">{{vehicle_detail.status}}</ion-badge>-->
+                        </h3>
+                    </div>
+
+                </div>
+                <div class="max-container list-border" padding-v-sm *ngIf="toggle">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-12 col-md-6">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-12 col-lg-12">
+                                    <span color="secondary">{{vehicle_detail.request.vehicle_type}}</span>
+                                </div>
+                                <div class="col-sm-6 col-md-12 col-lg-12">
+                                    <span color="light">{{vehicle_detail.vehicle_no}}                   
+                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-12 col-md-6">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-12 col-lg-12">
+                                    <span color="secondary">Device ID</span>
+                                </div>
+                                <div class="col-sm-6 col-md-12 col-lg-12">
+                                    <span color="light">{{(vehicle_detail.device_id?vehicle_detail.device_id:'GPS Not Attached')}} {{(vehicle_detail.unTagged && vehicle_detail.device_id)?'(Untagged)':''}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ion-item color="primary" padding-v-sm class="locationSection" *ngIf="toggle">
+                    <ion-row>
+                        <ion-col no-padding class="row">
+                            <div class="col-xs-5 col-sm-5" text-left padding-l-lg padding-r-xs>
+                                <p font-sm>
+                                    <span color="light">{{vehicle_detail.request.source.plant_name}}</span>
+                                </p>
+                                <p font-xs>
+                                    <span color="light">{{vehicle_detail.request.depart_datetime}}</span>
+                                </p>
+                            </div>
+                            <div class="col-xs-2 col-sm-2" text-center padding-v-xs font-sm>
+                                <ion-icon class="fa fa-exchange" aria-hidden="true" color="light"></ion-icon>
+                            </div>
+                            <div class="col-xs-5 col-sm-5" padding-r-lg padding-l-xs text-left>
+                                <p font-sm>
+                                    <span color="light">{{vehicle_detail.request.destination.plant_name}}</span>
+                                </p>
+                                <p font-xs>
+                                    <span color="light">{{vehicle_detail.request.expected_datetime}}</span>
+                                </p>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-item>
+
+                <ion-row responsive-sm no-padding>
+                    <div class="max-container" padding-v-sm *ngIf="toggle" padding-b-lg>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="vendor-box pointer" padding-sm onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+                                    <div class="col-xs-10" padding-h-sm>
+
+                                        <span color="yellow" *ngIf="vehicle_detail.vendor">{{vehicle_detail.vendor.name}}</span>
+
+                                    </div>
+                                    <div class="col-xs-2" padding-h-sm text-right>
+                                        <span color="light"><i class="fa fa-info-circle pointer" aria-hidden="true" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"></i>
+
+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-row>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="md-card-container">
+    <div id="timeline">
+        <div class="timeline-item" [ngClass]="{'pending':(item.options.start_time==false && item.options.end_time==false), 'current':(item.options.start_time!=false && item.options.end_time==false), 'done':(item.options.start_time!=false && item.options.end_time!=false)}"
+            *ngFor="let item of vehicle_detail.activities;  let i = index ">
+            <div class="timeline-icon" text-center>
+
+                <span color="light">                   
+                    </span>
+            </div>
+
+            <!--<div class="timeline-content" (click)="(i<3)?openPage(item,i):''">-->
+
+            <div class="timeline-content pointer" (click)="openPage(item,i)">
+
+                <p [innerText]="item.title"></p>
+                <p *ngIf="item.options.end_time!=false" color="dark">{{item.content | slice: 0: 60}}</p>
+                <p color="dark">{{item.options.start_time!=false && item.options.end_time!=false?'Finished':item.options.start_time!=false?'Started':'Pending'}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--Info detail popup-->
+    <div id="light">
+        <div class="white_content">
+            <ion-header class="modal-head-bg">
+                <ion-title padding-v-sm>Vendor Details
+                    <a class="closBtn" color="dark" href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><i class="fa fa-times-circle-o fa-lg" color="light" aria-hidden="true"></i></a>
+                </ion-title>
+            </ion-header>
+            <div class="popupwraper">
+                <div class="contentSection">
+                    <ion-list>
+                        <ion-item padding-v-xs>
+                            <p>
+                                <ion-icon class="fa fa-handshake-o fa-lg font-sm" aria-hidden="true" color="primary"></ion-icon>
+
+                                <span color="primary" *ngIf="vehicle_detail.vendor">{{vehicle_detail.vendor.name}}</span>
+
+
+                            </p>
+                        </ion-item>
+                        <ion-item padding-v-xs>
+                            <p>
+                                <ion-icon class="fa fa-mobile fa-lg text-lg" aria-hidden="true" color="primary"></ion-icon>
+                                <span color="primary" *ngIf="vehicle_detail.vendor">{{vehicle_detail.vendor.mobile}}</span>
+                            </p>
+                        </ion-item>
+                        <ion-item padding-v-xs>
+                            <p>
+                                <ion-icon class="fa fa-envelope font-sm" aria-hidden="true" color="primary"></ion-icon>
+                                <span color="primary" *ngIf="vehicle_detail.vendor">{{vehicle_detail.vendor.email}}</span>
+                            </p>
+                        </ion-item>
+                        <ion-item padding-v-xs>
+                            <p>
+                                <ion-icon class="fa fa fa-user font-sm" aria-hidden="true" color="primary"></ion-icon>
+                                <span color="primary" *ngIf="vehicle_detail.vendor">{{vehicle_detail.vendor.contact_person}}</span>
+
+                            </p>
+                        </ion-item>
+                        <ion-item padding-v-xs>
+                            <p>
+                                <ion-icon class="fa fa-map-marker fa-lg font-sm" aria-hidden="true" color="primary"></ion-icon>
+                                <span color="primary" style="white-space:initial" *ngIf="vehicle_detail.vendor">{{vehicle_detail.vendor.address_line1}} ,{{vehicle_detail.vendor.address_line2}}</span>
+                            </p>
+                        </ion-item>
+                    </ion-list>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fade" class="black_overlay"></div>

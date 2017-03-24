@@ -1,0 +1,173 @@
+<ion-content>
+  <div class="control">
+    <!--Header-->
+
+    <!--Content - form-->
+    <ion-row class="content">
+      <ion-col>
+        <div width-100 text-center><img src="img/pepsico-logo.png" class="logo" /></div>
+        <form [formGroup]="loginForm">
+          <ion-item>
+            <ion-label floating>
+              <ion-icon class="fa fa-user" item-left></ion-icon>Username</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="lock" item-left></ion-icon>Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        <button ion-button block (click)="login(loginForm)" type="submit" [disabled]="!loginForm.valid">Login</button>
+        </form>
+        <!-- <ion-row class="social">
+          <ion-col>
+            <button ion-button color="facebook" block (click)="socialLogin('facebook')">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button color="google" block (click)="socialLogin('google')">
+              <ion-icon name="logo-google"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+         
+         <ion-row class="footer">
+          <!-- <ion-col text-right (click)="openSignUp()">
+            <p>Create account</p>
+          </ion-col>
+           <ion-col text-center (click)="openForgot()">
+            <p>Forgot password?</p>
+<p text-center style="margin:15px 0 0 0;" (click)="dismiss()">Close</p>
+          </ion-col>
+        </ion-row> -->
+        <ion-row class="footer" text-center>
+         <ion-col padding-top [navPush]="aboutPage"><a  class="about-link pointer">About Us</a></ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <!--***************************** TESTING CODE ONLY **********************************-->    
+          <!--  TESTING CODE ONLY-->
+        
+    
+         <!--<form [formGroup]="adminForm">
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon class="fa fa-user" item-left></ion-icon>Username</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon name="lock" item-left></ion-icon>Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        <button ion-button block (click)="login(adminForm)" type="submit" [disabled]="!loginForm.valid">Admin</button>
+        </form>
+         <form [formGroup]="securityForm">
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon class="fa fa-user" item-left></ion-icon>Username</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon name="lock" item-left></ion-icon>Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        <button ion-button block (click)="login(securityForm)" type="submit" [disabled]="!loginForm.valid">Security</button>
+        </form> 
+        <form [formGroup]="vendorForm">
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon class="fa fa-user" item-left></ion-icon>Username</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon name="lock" item-left></ion-icon>Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        <button ion-button block (click)="login(vendorForm)" type="submit" [disabled]="!loginForm.valid">Vendor</button>
+        </form> 
+        <form [formGroup]="supervisorForm">
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon class="fa fa-user" item-left></ion-icon>Username</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon name="lock" item-left></ion-icon>Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        <button ion-button block (click)="login(supervisorForm)" type="submit" [disabled]="!loginForm.valid">Supervisor</button>
+        </form>-->
+
+       <!--***************************** TESTING CODE ONLY **********************************-->  
+  </div>
+
+</ion-content>
+
+
+
+<ion-footer>
+   <ion-buttons text-center class="modulbuttons">
+      <!--***************************** TESTING CODE ONLY **********************************-->    
+          <!--  TESTING CODE ONLY-->
+    
+         <form [formGroup]="adminForm">
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon class="fa fa-user" item-left></ion-icon>Username</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon name="lock" item-left></ion-icon>Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        <button ion-button (click)="login(adminForm)" type="submit" [disabled]="!loginForm.valid">Admin</button>
+        </form>
+         <form [formGroup]="securityForm">
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon class="fa fa-user" item-left></ion-icon>Username</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon name="lock" item-left></ion-icon>Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        <button ion-button (click)="login(securityForm)" type="submit" [disabled]="!loginForm.valid">Security</button>
+        </form> 
+        <form [formGroup]="vendorForm">
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon class="fa fa-user" item-left></ion-icon>Username</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon name="lock" item-left></ion-icon>Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        <button ion-button (click)="login(vendorForm)" type="submit" [disabled]="!loginForm.valid">Vendor</button>
+        </form> 
+        <form [formGroup]="supervisorForm">
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon class="fa fa-user" item-left></ion-icon>Username</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item style="display:none;">
+            <ion-label floating>
+              <ion-icon name="lock" item-left></ion-icon>Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        <button ion-button (click)="login(supervisorForm)" type="submit" [disabled]="!loginForm.valid">Supervisor</button>
+        </form>
+
+       <!--***************************** TESTING CODE ONLY **********************************-->  
+   </ion-buttons>
+</ion-footer>

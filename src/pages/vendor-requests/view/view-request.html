@@ -1,0 +1,121 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Request Detail</ion-title>
+
+        <!--<ion-buttons end>
+            <button ion-button>
+                <ion-icon name="md-person"></ion-icon>
+            </button>
+        </ion-buttons>-->
+
+        <ion-buttons end>
+            <button ion-button>
+                <ion-icon name="notifications" color="yellow"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content no-margin>
+    <div class="md-card-container">
+        <div class="max-container">
+            <div class="custom" padding-md padding-b-xs>
+                <div class="request-detail-top-card">
+                    <div class="bg">
+                        <div class="custome-card">
+                            <ion-card-header padding-b-xs>
+                                <h3 color="primary" no-margin>{{requestDetail.request.supervisor.name}}</h3>
+                                <p no-margin>wants to book vehicles.</p>
+                            </ion-card-header>
+                            <hr>
+                            <div no-padding>
+                                <div padding-h-md padding-v-sm>
+                                    Vehicles Required
+                                    <ion-badge item-right class="pull-right">{{requestDetail.vehicle_count}}</ion-badge>
+                                </div>
+                            </div>
+                            <hr>
+                            <div no-padding>
+                                <div padding-h-md padding-v-sm>
+                                    Goods Type
+                                    <span class="pull-right">Furniture</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div no-padding>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div padding-h-md padding-v-sm>
+                                            <h3 color="primary" font-lg no-margin>FROM</h3>
+                                            <p font-sm no-padding no-margin>{{requestDetail.request.source.plant_name}}</p>
+                                            <p font-xs no-padding no-margin>{{requestDetail.request.depart_datetime |date:'mediumDate'}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div padding-h-md padding-v-sm>
+                                            <h3 color="primary" font-lg no-margin>TO</h3>
+                                            <p font-sm no-padding no-margin>{{requestDetail.request.destination.plant_name}}</p>
+                                            <p font-xs no-padding no-margin>{{requestDetail.request.expected_datetime | date : 'mediumDate'}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+ 
+            </div>
+            <div class="row" class="f-left">
+                <div>
+                    <div class="f-left" padding-v-md>
+                        <div class="col-xs-12 col-sm-12 col-md-6 truck-container-2" no-padding *ngFor="let vehicle of vehicleArray  ">
+
+                            <div padding-h-lg padding-v-md class="">
+                                <ion-card color="primary" no-padding no-margin style="height: 130px; width:100%">
+                                    <ion-row padding-h-md padding-v-sm>
+                                        <ion-col no-padding class="row">
+                                            <div class="col-xs-6 col-sm-12" text-left>
+                                                <p>
+                                                    <ion-icon class="fa fa fa-user" aria-hidden="true" color="light"></ion-icon>
+                                                    <span color="secondary">{{vehicle.driver_name}} <br>
+                                                    <span color="light" padding-l-md>{{vehicle.driver_number}}</span>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-12" text-left>
+                                                <p>
+                                                    <!--<ion-icon class="fa fa fa-mobile" text-xs aria-hidden="true" color="light"></ion-icon>-->
+
+                                                </p>
+                                            </div>
+                                        </ion-col>
+                                    </ion-row>
+                                    <ion-row padding-h-md padding-b-sm>
+                                        <ion-col no-padding class="row">
+                                            <div class="col-xs-12 col-sm-12" text-center>
+                                                <h2 color="light" no-margin margin-top-md font-xxl uppercase><b>Vehicle no</b></h2>
+                                                <p color="blue-light">{{vehicle.vehicle_no}}</p>
+                                            </div>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-content>
+<ion-footer padding-h-xs>
+    <p color="light" font-sm no-padding no-margin>
+        <button *ngIf="vehicleArray" [disabled]="requestDetail.vehicle_count==vehicleArray.length" [navPush]="addVehicle" [navParams]="requestDetail"
+            ion-button color="primary" block>Add Vehicle Details</button>
+    </p>
+</ion-footer>

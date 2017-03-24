@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar> 
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Track Vehicles</ion-title>
+    <ion-buttons end>
+     
+    </ion-buttons>
+    
+
+    <!--<ion-buttons end>
+      <button ion-button>
+        <ion-icon name="md-person"></ion-icon>
+      </button>
+    </ion-buttons>-->
+
+    
+        <ion-buttons end>
+        <button ion-button>
+            <ion-icon name="notifications" color="yellow"></ion-icon>
+        </button>
+        </ion-buttons>
+  </ion-navbar>
+
+   
+
+</ion-header>
+
+
+
+<ion-content no-margin>
+  <ion-searchbar *ngIf="showSearch" [(ngModel)]="search" (ionInput)="searchPlace($event)"></ion-searchbar>
+    <ion-fab right top>
+      <button ion-fab (click)="goback()"><ion-icon class="fa fa-file-text-o"></ion-icon></button>
+    </ion-fab>
+
+  <div #map id="map"></div>
+  <!--<button (click)="recenterBound()">Recenter</button>-->
+  
+  <div class="autocompleteItems" *ngIf="autocompleteResults.length > 0">
+    <ion-item *ngFor="let item of autocompleteResults" (click)="chooseItem(item)">{{ item.description }}</ion-item>
+  </div>
+</ion-content>

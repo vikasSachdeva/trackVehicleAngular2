@@ -1,0 +1,90 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+<ion-icon name="menu"></ion-icon>
+</button>
+        <ion-title>Dashboard</ion-title>
+        <ion-buttons end>
+            <topnav-bar [hideCreateButton]="flase"></topnav-bar>
+        </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div padding-md class="dashboard-card">
+        <div class="board-column">
+
+            <div class="masonry">
+                <div class="masonry-item">
+                    <div class="chart-box">
+                        <div style="padding:50px;">
+                            <div class="wrapper2">
+                                <div class="main">
+                                    <span padding-md class="custom-graph">
+<canvas baseChart width="140" height="100" [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" [colors]="lineChartColors"></canvas>
+</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="masonry-item">
+<div style="padding:50px;">
+<h2 color="primary">65</h2>
+<p>Awaiting acceptance</p>
+</div>
+</div>-->
+                <div class="masonry-item">
+                    <div class="chart-box">
+                        <div style="padding:50px;">
+                            <div class="wrapper2">
+                                <div class="main">
+                                    <span padding-md class="custom-graph">
+<canvas baseChart width="140" height="100" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item">
+                    <div style="padding:50px;">
+                        <h2 color="primary">65</h2>
+                        <p>Vehicles In Transit</p>
+                    </div>
+                </div>
+
+
+                <div class="masonry-item">
+                    <div style="padding:50px;">
+                        <h2 color="primary">15</h2>
+                        <p>Vehicles Running Late</p>
+                    </div>
+                </div>
+
+                <div class="masonry-item">
+                    <div style="padding:50px;">
+                        <h2 color="primary">1127</h2>
+                        <p>Vehicles Tracking On</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        <!--<canvas baseChart width="140" height="100" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>-->
+        <!--<canvas baseChart width="140" height="100" [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" [colors]="lineChartColors"></canvas>-->
+        <!--<canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [colors]="lineChartColors"></canvas>
+<canvas baseChart [datasets]="radarChartData" [labels]="radarChartLabels" [chartType]="radarChartType" [colors]="lineChartColors"></canvas>
+<canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" [colors]="lineChartColors"></canvas>
+<canvas baseChart [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend" [chartType]="polarAreaChartType" [colors]="lineChartColors"></canvas>-->
+
+    </div>
+</ion-content>

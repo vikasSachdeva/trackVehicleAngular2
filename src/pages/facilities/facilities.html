@@ -1,0 +1,91 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+         <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Facilities</ion-title>
+        <ion-buttons end>
+            <topnav-bar [hideCreateButton]="false"></topnav-bar>
+        </ion-buttons>
+        <ion-buttons end>
+            <button ion-button>
+            <ion-icon name="md-person"></ion-icon>
+         </button>
+        </ion-buttons>
+    </ion-navbar>
+
+    <ion-toolbar>
+        <ion-toolbar>
+            <ion-buttons start padding-l-sm>
+                <button ion-fab mini [navPush]="addEditFacility" color="green" [navParams]="item" no-margin> <ion-icon class="fa fa-plus"></ion-icon></button>
+            </ion-buttons>
+            <div no-padding>
+                <ion-searchbar no-padding placeholder="Search" [(ngModel)]="searchKeyword"></ion-searchbar>
+            </div>
+        </ion-toolbar>
+    </ion-toolbar>
+</ion-header>
+<ion-content no-margin>
+
+   <ion-card>
+        <ion-item padding-v-sm>
+            <ion-label>
+                <h2 padding-l-md color="primary">Sort</h2>
+            </ion-label>
+            <ion-select [(ngModel)]="sortBy" class="select-menu" no-padding>
+                <ion-option value="plant_name" selected="true">Name</ion-option>
+                <ion-option value="plant_code">Code</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item class="visible-xs title-head">
+            <div class="row">
+                <div class="col-sm-9 col-md-8">
+                    <div class="col-xs-3 col-sm-3" font-sm>
+                        <h2 font-lg>CODE</h2>
+                    </div>
+                    <div class="col-xs-8 col-sm-9">
+                        <h2 font-lg>NAME</h2>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-3 col-sm-3 col-md-2 col-lg-3 status-box">
+                    <h2>CITY</h2>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-2 col-lg-1 edit-box">
+                    <h2 padding-r-sm text-right>EDIT</h2>
+                </div>
+            </div>
+        </ion-item>
+
+        <ion-item class="action-row" *ngFor="let facility of facilities | searchAnywhere : 'filter' : searchKeyword  | searchAnywhere : 'orderBy' :sortBy;let i = index">
+            <div class="row">
+                <div class="col-sm-9 col-md-8">
+                    <div class="col-xs-3 col-sm-3" font-sm>
+                        <span color="primary">{{facility.plant_code}}</span>
+                    </div>
+                    <div class="col-xs-3 col-sm-9">
+                        <h2 class="ellipsis-txt" font-sm>{{facility.plant_name}}</h2>
+                    </div>
+
+                </div>
+                <div class="col-xs-6 col-sm-2 col-md-2 clear-row">
+                    <h2 class="visible-xs status-btn" color="dark" font-sm padding-v-xs>{{facility.city.plant_name?facility.city.plant_name:facility.city}}</h2>
+                </div>
+                <div class="col-sm-3 col-xs-4 col-md-2" style="float:right;">
+                    <div class="action-box" text-right>
+                        <div class="delete-btn pull-right">
+                             <ion-icon class="fa fa-trash-o" no-margin color="light" item-right (click)="deleteFacility(facility.$key)" title="Delete"></ion-icon>
+
+                        </div>
+                        <div class="reset-btn pull-right">
+                            <ion-icon class="fa fa-pencil" no-margin color="light" item-right [navPush]="addEditFacility" [navParams]="facility"></ion-icon>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </ion-item>
+    </ion-card>
+
+</ion-content>

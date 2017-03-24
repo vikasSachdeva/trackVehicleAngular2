@@ -1,0 +1,46 @@
+notification {
+  .scroll-content {
+    overflow-y: auto;
+  }
+  ion-col {
+    position: relative;
+  }
+
+  .notification-container{
+      width:100%;
+  }
+
+  .notification-container .img-section{
+     width:100%;
+     text-align:  center;
+     position: absolute;
+     top:20%;
+     left: 0;
+  }
+
+  .notification-container .img-section img{
+     width:100px;
+     height: auto;
+  }
+
+  .notification-container .img-section h2{
+      font-size:17px;
+      font-weight: bold!important;
+      color:color($colors, secondary);
+      letter-spacing: 1px;
+  }
+
+
+  .notification-container .img-section p{
+      font-size:17px;
+      font-weight: normal!important;
+      color:#777;
+      letter-spacing:0.5px;
+      line-height: 22px;
+  }
+  
+}
+
+
+
+

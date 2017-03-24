@@ -1,0 +1,120 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>{{title}}</ion-title>
+
+        <!--<ion-buttons end>
+      <button ion-button>
+        <ion-icon name="md-person"></ion-icon>
+      </button>
+    </ion-buttons>-->
+
+        <ion-buttons end>
+            <button ion-button>
+            <ion-icon name="notifications" color="yellow"></ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content no-margin>
+    <div class="md-card-container">
+        <form [formGroup]="formFields">
+            <div class="custom-card" padding-v-lg>
+                <h2 color="primary" padding-h-lg no-margin><i class="fa fa-exchange" aria-hidden="true"></i> Transporter</h2>
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-user" aria-hidden="true"></i> Name</ion-label>
+                    <ion-input type="text" left text-left [(ngModel)]="transporter.name" name="name" formControlName="name" colo="silver-grey"></ion-input>
+                </ion-item>
+
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-envelope" aria-hidden="true"></i> Email Address</ion-label>
+                    <ion-input type="text" left text-left [(ngModel)]="transporter.email" name="email" formControlName="email"></ion-input>
+                </ion-item>
+
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-mobile fa-lg" aria-hidden="true"></i> Mobile Number</ion-label>
+                    <ion-input type="text" left text-left [(ngModel)]="transporter.mobile" name="transporter.mobile" formControlName="mobile"></ion-input>
+                </ion-item>
+
+                <ion-item padding-v-lg padding-h-lg>
+                    <ion-label floating><i class="fa fa-check-circle " aria-hidden="true"></i> State </ion-label>
+                    <ion-input type="text" left text-left [(ngModel)]="transporter.state" name="state" formControlName="state"></ion-input>
+                </ion-item>
+
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label><i class="fa fa-check-circle" aria-hidden="true"></i> City</ion-label>
+                    <ion-select [(ngModel)]="transporter.city" class="drop-arrow" name="city" formControlName="city">
+
+                        <ion-option *ngFor="let city of (commonServices.cities | searchAnywhere:'orderBy':'name')" [value]="city.name" [selected]="city.name==transporter.city">{{city.name}}</ion-option>
+                    </ion-select>
+                </ion-item>
+
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-map-marker" aria-hidden="true"></i> Address 1</ion-label>
+                    <ion-textarea left text-left [(ngModel)]="transporter.address_line1" name="address_line1" formControlName="address_line1"></ion-textarea>
+                </ion-item>
+
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-map-marker" aria-hidden="true"></i> Address 2</ion-label>
+                    <ion-textarea left text-left [(ngModel)]="transporter.address_line2" name="transporter.address_line2" formControlName="address_line2"></ion-textarea>
+                </ion-item>
+            </div>
+
+            <div class="custom-card" padding-v-lg>
+                <h2 color="primary" padding-h-lg no-margin><i class="fa fa-address-book-o" aria-hidden="true"></i> Contact Person</h2>
+
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-user" aria-hidden="true"></i> Name</ion-label>
+                    <ion-input type="text" left text-left [(ngModel)]="transporter.contact_person" colo="silver-grey" name="contact_person" formControlName="contact_person"></ion-input>
+                </ion-item>
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-envelope" aria-hidden="true"></i> Email</ion-label>
+                    <ion-input type="text" left text-left [(ngModel)]="transporter.contact_email" colo="silver-grey" name="contact_email" formControlName="contact_email"></ion-input>
+                </ion-item>
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-mobile" aria-hidden="true"></i> Phone</ion-label>
+                    <ion-input type="text" left text-left [(ngModel)]="transporter.contact_phone" colo="silver-grey" name="contact_phone" formControlName="contact_phone"></ion-input>
+                </ion-item>
+            </div>
+
+            <div class="custom-card" padding-v-lg>
+                <h2 color="primary" padding-h-lg no-margin><i class="fa fa-info-circle" aria-hidden="true"></i> Other Details</h2>
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-address-card-o" aria-hidden="true"></i> Category</ion-label>
+                    <ion-input type="text" left text-left colo="silver-grey" [(ngModel)]="transporter.vendor_category" name="transporter.vendor_category" formControlName="vendor_category"></ion-input>
+                </ion-item>
+
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-tablet" aria-hidden="true"></i> Code</ion-label>
+                    <ion-input type="text" left text-left [(ngModel)]="transporter.vendor_code" colo="silver-grey" name="vendor_code" formControlName="vendor_code"></ion-input>
+                </ion-item>
+
+
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-check-circle" aria-hidden="true"></i> Pin</ion-label>
+                    <ion-input type="text" left text-left colo="silver-grey" [(ngModel)]="transporter.pin" name="transporter.pin" formControlName="pin"></ion-input>
+                </ion-item>
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-check-circle" aria-hidden="true"></i> PAN</ion-label>
+                    <ion-input type="text" left text-left colo="silver-grey" [(ngModel)]="transporter.pan" name="transporter.pan" formControlName="pan"></ion-input>
+                </ion-item>
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-check-circle" aria-hidden="true"></i> TIN</ion-label>
+                    <ion-input type="text" left text-left colo="silver-grey" [(ngModel)]="transporter.tin" name="transporter.tin" formControlName="tin"></ion-input>
+                </ion-item>
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-check-circle" aria-hidden="true"></i> CST No</ion-label>
+                    <ion-input type="text" left text-left colo="silver-grey" [(ngModel)]="transporter.cst_no" name="transporter.cst_no" formControlName="cst_no"></ion-input>
+                </ion-item>
+                <ion-item padding-v-sm padding-h-lg>
+                    <ion-label floating><i class="fa fa-check-circle" aria-hidden="true"></i> St Reg No</ion-label>
+                    <ion-input type="text" left text-left colo="silver-grey" [(ngModel)]="transporter.st_reg_no" name="transporter.st_reg_no" formControlName="st_reg_no"></ion-input>
+                </ion-item>
+
+            </div>
+        </form>
+    </div>
+</ion-content>
+<ion-footer padding-h-xs><button ion-button block [disabled]="!formFields.valid" (click)="saveTransporter(transporter)">Save</button></ion-footer>

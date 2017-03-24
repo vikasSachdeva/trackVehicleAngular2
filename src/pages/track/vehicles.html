@@ -1,0 +1,164 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        </button>
+
+        <ion-title>{{title?"Search":"Track Vehicles"}}</ion-title>
+
+        <span *ngIf="title">
+
+        <ion-buttons end>
+        <button ion-button (click)="searchToggle = !searchToggle">    
+        <ion-icon name="search"></ion-icon></button>
+        </ion-buttons>
+
+        <div class="toolbar-background-md">
+        <ion-searchbar animated="true" *ngIf="!searchToggle" placeholder="Search Contacts" [(ngModel)]="usersearch"  [showCancelButton]="true" (ionCancel)="back()" [ngClass]="{'SearchIos':title}" style="position: absolute; top:0px;" padding-md></ion-searchbar>
+        </div>
+
+        </span>
+
+
+        <ion-buttons end>
+            <span *ngIf="!title">
+
+
+
+<button ion-button>
+<ion-icon name="notifications" color="yellow"></ion-icon>
+</button>
+</span>
+        </ion-buttons>
+    </ion-navbar>
+
+
+
+
+
+    <span *ngIf="!title">
+        <ion-toolbar padding-sm *ngIf="!usersearch">
+            <div no-padding class="relative">
+                <div padding-r-lg style="position: absolute; right: 0px; z-index: 2000; background:#fff" colors="light">
+        <ion-select icon-only class="sort-menu select-filter" [(ngModel)]="sortBy">
+            <ion-option value="" selected="true">All</ion-option>
+            <ion-option value="driver_name" selected="true">Driver Name</ion-option>
+            <ion-option value="vehicle_no">Vehicle No</ion-option>
+            <!-- <ion-option value="device_id">Device ID</ion-option> -->
+
+        </ion-select>
+        </div>
+        <ion-searchbar no-padding placeholder="Search Contacts..." [(ngModel)]="usersearch" [showCancelButton]="shouldShowCancel"
+            (ionCancel)="onCancel($event)">
+        </ion-searchbar>
+        </div>
+        </ion-toolbar>
+        </span>
+
+
+
+</ion-header>
+<ion-content no-margin>
+    <div class="md-card-container">
+        <div class="loader" *ngIf="loading">
+            <ion-spinner name="crescent"></ion-spinner>
+        </div>
+
+        <div class="col-sm-6 col-md-6 col-lg-6 menuOpen-md" *ngFor="let vehicle of vehicleArray | async | searchAnywhere : 'filter'  : usersearch : sortBy | searchAnywhere : 'orderBy' :sortBy; let i = index" no-padding>
+
+            <ion-card class="custom vehicle-card pointer" color="primary" [navPush]="detailPage" [navParams]="vehicle">
+
+
+                <ion-row padding-h-md padding-v-sm>
+                    <ion-col no-padding class="row">
+                        <div class="col-xs-6 col-sm-6" text-left>
+                            <p>
+                                <ion-icon class="fa fa fa-user" aria-hidden="true" color="light"></ion-icon>
+                                <span color="secondary">{{vehicle.driver_name}}</span>
+                            </p>
+
+                        </div>
+                        <div class="col-xs-6 col-sm-6" text-right>
+                            <p>
+                                <ion-icon class="fa fa fa-mobile" text-xs aria-hidden="true" color="light"></ion-icon>
+                                <span color="light">{{vehicle.driver_number}}</span>
+                            </p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row padding-h-md padding-v-sm>
+                    <ion-col no-padding class="row">
+                        <div class="col-xs-6 col-sm-6" no-padding text-center>
+                            <h2 no-margin margin-top-md color="light" font-xxl uppercase><b>Device ID</b></h2>
+                            <p color="blue-light">{{(vehicle.device_id?vehicle.device_id:'Gps Not Attached')}} {{(vehicle.unTagged && vehicle.device_id)?'(Untagged)':''}}
+                        </div>
+                        <div class="col-xs-6 col-sm-6" text-center no-padding paddding-l-xs style="border-left:1px solid #423e7c">
+
+
+                            <h2 color="light" no-margin margin-top-md font-xxl uppercase class="ellipsis-txt" *ngIf="vehicle.request"><b>{{vehicle.request.vehicle_type}}</b></h2>
+                            <h2 color="light" no-margin margin-top-md font-xxl uppercase class="ellipsis-txt" *ngIf="!vehicle.request" font-sm>
+                                <ion-spinner name="bubbles"></ion-spinner>
+                            </h2>
+
+
+                            <p color="blue-light">{{vehicle.vehicle_no}}</p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-label class="label label-md" no-margin padding-v-sm>
+                    <ion-row padding-h-md>
+                        <ion-col no-padding class="row">
+                            <div class="col-xs-5 col-sm-5 no-padding-h" text-left paddding-l-sm>
+                                <p font-sm color="light" class="ellipsis-txt">
+                                    <i class="fa fa-crosshairs" aria-hidden="true" color="yellow"></i>
+                                    <span padding-h-sm color="light" class="ellipsis-txt" *ngIf="vehicle.request"><b></b>
+                                    <span padding-h-sm color="light" class="ellipsis-txt" *ngIf="vehicle.request.source"><b>{{vehicle.request.source.plant_name}}</b></span>
+                                    </span>
+                                    <span padding-h-sm color="light" class="ellipsis-txt" *ngIf="!vehicle.request" font-sm>
+                                        <ion-spinner name="bubbles"></ion-spinner>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="col-xs-2 col-sm-2" text-center paddding-l-xs padding-t-xs font-sm>
+                                <i class="fa fa-exchange" aria-hidden="true" color="light"></i>
+                            </div>
+                            <div class="col-xs-5 col-sm-5  no-padding-h" text-left paddding-l-xs>
+                                <p font-sm color="light" class="ellipsis-txt">
+                                    <ion-icon class="fa fa-map-marker" aria-hidden="true" color="yellow"></ion-icon>
+                                    <span padding-h-sm color="light" class="ellipsis-txt" *ngIf="vehicle.request"><b></b>
+                                    <span padding-h-sm color="light" class="ellipsis-txt" *ngIf="vehicle.request.destination"><b>{{vehicle.request.destination.plant_name}}</b></span>
+                                    </span>
+                                    <span padding-h-sm color="light" class="ellipsis-txt" *ngIf="!vehicle.request" font-sm>
+                                        <ion-spinner name="bubbles"></ion-spinner>
+                                    </span>
+                                </p>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-label>
+                <ion-row padding-md padding-v-sm style="border-top:1px solid #423e7c">
+                    <ion-col no-padding class="row">
+                        <div class="col-xs-5 col-sm-5" text-left paddding-l-xs>
+                            <span font-xs color="yellow">{{getStatus(vehicle, true)}}</span>
+                        </div>
+                        <div class="col-xs-2 col-sm-2" text-center paddding-l-xs font-sm>
+
+
+                            <i class="fa fa-truck fa-flip-horizontal" aria-hidden="true" color="light"></i>
+                        </div>
+                        <div class="col-xs-5 col-sm-5" text-left paddding-l-xs>
+                            <p font-sm>
+                                <span color="yellow" font-xs *ngIf="vehicle.activity.length!=0">{{getStatus(vehicle, false)}} of </span>
+                                <span color="yellow" font-xs>{{activitiesLength}}</span>
+
+                                <i class="fa fa-angle-right fa-lg pull-right" aria-hidden="true" margin-t-xs color="blue-light"></i>
+                        </div>
+
+                    </ion-col>
+                </ion-row>
+
+            </ion-card>
+        </div>
+    </div>
+</ion-content>

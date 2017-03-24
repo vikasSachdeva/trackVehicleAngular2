@@ -1,0 +1,111 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+         <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Manage Users</ion-title>
+        <ion-buttons end>
+            <topnav-bar [hideCreateButton]="flase"></topnav-bar>
+        </ion-buttons>
+    </ion-navbar>
+
+    <ion-toolbar>
+        <ion-toolbar>
+            <ion-buttons start padding-l-sm>
+                <button ion-fab mini [navPush]="addEditUser" color="green" [navParams]="item" no-margin> <ion-icon class="fa fa-plus"></ion-icon></button>
+            </ion-buttons>
+            <div no-padding>
+                <ion-searchbar no-padding placeholder="Search Contacts..." block [(ngModel)]="usersearch"></ion-searchbar>
+            </div>
+        </ion-toolbar>
+    </ion-toolbar>
+
+
+</ion-header>
+<ion-content no-margin>
+    <!--
+    <div class="search-filter">
+        <div no-padding>
+            <ion-row>
+                <ion-searchbar block [(ngModel)]="usersearch"></ion-searchbar>
+            </ion-row>
+        </div>
+    </div>-->
+
+
+    <!--<ion-fab right bottom>
+        <button ion-fab [navPush]="addEditUser" color="green" [navParams]="item"><ion-icon class="fa fa-plus"></ion-icon></button>
+    </ion-fab>-->
+
+    <ion-card>
+        <ion-item padding-v-sm>
+            <ion-label>
+                <h2 color="primary" padding-l-md>Sort</h2>
+            </ion-label>
+            <ion-select [(ngModel)]="sortBy" class="select-menu" no-magin no-padding>
+                <ion-option value="name" selected="true">Name</ion-option>
+                <ion-option value="user_role">Role</ion-option>
+                <ion-option value="status">Status</ion-option>
+            </ion-select>
+        </ion-item>
+
+
+        <ion-item class="visible-xs title-head">
+            <div class="row">
+                <div class="col-xs-9 col-sm-9 col-md-8">
+                    <div class="col-sm-8">
+                        <h2 font-lg>NAME</h2>
+                    </div>
+                    <div class="col-xs-3 col-sm-4" font-sm>
+                        <h2 font-lg>ROLE</h2>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-2 col-md-2 edit-box">
+                    <h2>STATUS</h2>
+                </div>
+                <div class="col-xs-1 col-sm-1 col-md-2 text-right status-box">
+                    <h2 padding-r-sm>EDIT</h2>
+                </div>
+            </div>
+        </ion-item>
+
+        <ion-item class="action-row" *ngFor="let user of usersArray | searchAnywhere : 'filter' : usersearch  | searchAnywhere : 'orderBy' :sortBy;let i = index">
+            <div class="row">
+                <div class="col-xs-9 col-sm-9 col-md-8">
+                    <div class="col-sm-8">
+                        <h2 font-md>{{user.name}}</h2>
+                    </div>
+                    <div class="col-xs-3 col-sm-4" font-sm>
+                        <span color="primary">{{user.role}}</span>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-2 status-btn">
+                    <div class="status_mobile">
+                        <button ion-button outline icon-left class="visible-xs {{user.status == 'activated' ? 'activt-btn':'suspended-btn'}}" font-xs
+                            [disabled]="user.role=='admin'" (click)="statusPopover($event, user)" color="{{user.status == 'activated' ? 'secondary':'danger'}}">
+                            <span>{{user.status}}</span>
+                            <i class="fa fa-ellipsis-v" aria-hidden="true" margin-l-xs></i>
+                            </button>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-2 action-box">
+                    
+                    <div class="delete-btn" *ngIf="user.role!='admin'">
+                        <ion-icon class="fa fa-trash-o" no-margin color="light" item-right (click)="deleteUser(user.$key)" title="Delete"></ion-icon>
+                    </div>
+                    <div class="edit-btn">
+                        <ion-icon class="fa fa-unlock-alt" no-margin color="light" item-left (click)="resetPassword(user.email)" title="Reset Password"></ion-icon>
+                    </div>
+                    <div class="reset-btn" *ngIf="user.role!='admin'">
+                        <ion-icon class="fa fa-pencil" no-margin color="light" item-right [navPush]="addEditUser" [navParams]="user" title="Edit"></ion-icon>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </ion-item>
+    </ion-card>
+
+
+</ion-content>

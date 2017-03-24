@@ -1,0 +1,470 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+page-root {
+    .content-md {
+        // background-color: color($colors, super-light-grey);
+        background-color:#f2f6fb;
+    }
+    .modal-head-bg {
+        background-color: color($colors, primary);
+    }
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+        border-bottom-color: color($colors, secondary);
+        box-shadow: inset 0 -1px 0 0 transparent;
+    }
+    .transparent {
+        background: transparent!important;
+    }
+    .drop-arrow {
+        margin: 0px;
+    }
+    .drop-arrow::after {
+        content: "\f0d7";
+        margin: 0px 5px;
+        font-family: 'FontAwesome';
+    }
+    .popover {
+        margin: 0px;
+    }
+    .popover::after {
+        content: "\f142";
+        margin: 0px 5px 0 10px;
+        color: #333;
+        font-family: 'FontAwesome';
+    }
+    .calendar {
+        margin: 0px;
+    }
+    .calendar::before {
+        content: "\f073";
+        margin: 0px 5px 0 0px;
+        font-family: 'FontAwesome';
+    }
+    .select-menu {
+        margin: 0px;
+        width: auto;
+    }
+    .select-menu::before {
+        content: "\f0b0";
+        padding: 0 10px;
+        font-family: 'FontAwesome';
+    }
+    .sort-menu {
+        margin: 0px;
+        width: auto;
+    }
+    .sort-menu::after {
+        content: "\f0dc";
+        padding: 0 0 0 10px;
+        font-family: 'FontAwesome';
+        color: #333;
+    }
+    .select-filter .select-text,.select-menu .select-text{display:none}
+
+    .img-circle {
+        border-radius: 100%
+    }
+    .opacity-3 {
+        opacity: .3
+    }
+     .ellipsis-txt {
+        overflow: hidden;
+        text-overflow: ellipsis!important;
+     }
+     
+    ion-item.border-bottom:last-child {
+        border: none
+    }
+    ion-item.border-top:last-child {
+        border: none
+    }
+    .menuHeader {
+        padding: 0px;
+        margin: 0;
+        min-height: 90px;
+        position: relative;
+    }
+    .menuHeader+.header-md:after {
+        height: 0px
+    }
+    .menuHeader ion-avatar {
+        width: 70px;
+        height: 70px;
+
+    position: relative;
+    box-shadow: 0 1px 3px #999;
+    border-radius: 100px;
+    background: #fff;
+    overflow: hidden;
+    text-align: center;
+    }
+    .menuHeader ion-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .menuHeader ion-title .toolbar-title {
+        font-size: 1.6rem
+    }
+    .pos-rlt .toolbar-title {
+        padding-left: 0px
+    }
+    .pos-rlt {
+        position: relative;
+        z-index: 1
+    }
+    .menuHeader ion-title p {
+        margin: 0;
+        font-size: 1.2rem
+    }
+    .item-bg {
+        width: 100%;
+        max-height: 150px;
+        position: absolute;
+        -webkit-filter: blur(7px);
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: .7
+        }
+    }
+    .menu {
+        text-align: left;
+        background-color: color($colors, light);
+        margin: 0;
+        text-align: left;
+        height: 100%;
+        .item {
+            display: table;
+            padding: 10px;
+            width: 100%;
+            ion-icon {
+                display: table-cell;
+                vertical-align: middle;
+                // font-size: 7rem;
+                color: color($colors, primary);
+
+            }
+            ion-icon{
+                    font-family: 'FontAwesome'!important;
+                    margin-top: 6px;
+                }
+            
+            img {
+                display: table-cell;
+                vertical-align: middle;
+                border: 1px solid color($colors, dark);
+                border-radius: 100%;
+                width: 80px;
+                height: 80px;
+                margin: 0% auto;
+            }
+        }
+        .inactive {
+            border-bottom: 1px solid color($colors, light-grey);
+        }
+        .active {
+            background: color($colors, secondary-light);
+        }
+        .item:last-child {
+            border-bottom: 0px
+        }
+    }
+        .custom-card .item{padding-left:8px;padding-right:8px}
+
+    @media (min-width: 767px) {
+        
+        ion-menu.logged-in {
+            display: block;
+        }
+        .logged-in .menu-inner {
+            transform: translate3d(0, 0, 0)!important;
+        }
+        .logged-in.menu-content {
+            transform: translate3d(280px, 0px, 0px) !important;
+            width: calc(100% - 280px)!important;
+        }
+        .logged-in .scroll-content {
+            margin-top: 150px
+        }
+        .menuHeader {
+            height: 150px;
+        }
+        ion-header button.bar-buttons {
+            display: none
+        }
+    }
+}
+
+ion-item.border-bottom:last-child {
+    border: none
+}
+
+ion-item.border-top:last-child {
+    border: none
+}
+
+.no-border {
+    border: 1px solid transparent!important;
+}
+
+.border-a {
+    border: 1px solid color($colors, light-grey);
+}
+
+.border-top {
+    border-top: 1px solid color($colors, light-grey);
+}
+
+.border-bottom {
+    border-bottom: 1px solid color($colors, super-light-grey);
+}
+
+.border-left {
+    border-left: 1px solid color($colors, super-light-grey);
+}
+
+.border-right {
+    border-right: 1px solid color($colors, super-light-grey);
+}
+
+ion-label,
+ion-datetime,
+ion-input,
+ion-checkbox,
+ion-radio {
+    font-weight: 300;
+    color: #000;
+}
+
+ion-label {
+    color: #999;
+}
+
+.item-datetime .label-md,
+.item-select .label-md,
+.item-input .label-md {
+    font-weight: 300;
+}
+
+.item-md.item-toggle ion-label {
+    color: #999;
+    font-weight: 300;
+}
+
+.action-sheet-cancel {
+    color: color($colors, danger)!important;
+}
+
+.f-left {
+    float: left;
+    width: 100%
+}
+
+.f-right {
+    float: right;
+    width: 100%
+}
+
+.card-1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.card-2 {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card-3 {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card-4 {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card-5 {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.toolbar-title-md {
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    font-weight: 300 !important;
+}
+
+.card-background-page {
+    ion-card {
+        position: relative;
+        text-align: center;
+    }
+    .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+    }
+    .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 52%;
+        width: 100%;
+        color: #fff;
+    }
+}
+
+// custom class 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 500 !important;
+    color: #222;
+}
+
+.pointer {
+    cursor: pointer
+}
+
+.custom,
+.custom p,
+.custom span,
+.custom p span {
+    color: #333;
+    font-weight: 400!important;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.toolbar-background-md {
+    background: color($colors, primary);
+}
+
+.bar-button-default-md,
+.bar-button-clear-md-default,
+.bar-button-md-default {
+    color: color($colors, light);
+}
+
+.toolbar-title-md {
+    color: color($colors, light);
+}
+
+.custom-input-border .item-inner {
+    border-bottom: 1px solid #dedede!important;
+}
+
+.heading ion-label {
+    margin: 0px;
+}
+
+.heading .item-inner {
+    border-bottom: none!important;
+}
+
+.header-md::after,
+.tabs-md[tabsPlacement="top"]>.tabbar::after,
+.footer-md::before,
+.tabs-md[tabsPlacement="bottom"]>.tabbar::before {
+    background-image: none;
+}
+
+ion-app.md [padding],
+ion-app.md [padding] .scroll-content {
+    padding: 0px;
+}
+
+.scroll-content {
+    overflow-y: inherit;
+}
+
+.bar-button-default-md:hover:not(.disable-hover),
+.bar-button-clear-md-default:hover:not(.disable-hover),
+.bar-button-md-default:hover:not(.disable-hover) {
+    color: #fff;
+}
+
+.card-md .item-md.item-block .item-inner {
+    border-bottom: 1px solid #dedede;
+}
+
+.card-md .item-md.item-block:last-child .item-inner {
+    border-bottom: none!important;
+}
+
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    box-shadow: inset 0 -1px 0 0 transparent!important;
+}
+
+.item-md.item-input.input-has-focus .item-inner {
+    box-shadow: inset 0 -1px 0 0 transparent!important;
+    border-bottom: 1px solid color($colors, primary)!important;
+}
+
+.toolbar .searchbar-md {
+    left: 0;
+    top: 0px!important
+}
+
+topnav-bar .button-md,
+topnav-bar .button-md.activated {
+    padding: 0 0.6rem;
+    box-shadow: none
+}
+.trname{  white-space: nowrap; overflow: hidden; text-overflow:ellipsis; }
+
+@media (max-width: 767px) {
+    .visible-xs-block {display: none;}
+}
+@media (max-width: 767px) {
+   .custom-card{margin:10px; width: calc(100% - 20px); border-radius: 2px; font-size: 1.4rem; background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);}
+}
+
+@media (min-width: 768px) {
+ .md-card-container{
+    max-width: 800px;
+    background: #fff;
+    /*border: 1px solid #d1d1d1;*/
+    height: 100%;
+    padding:5px;
+    position: absolute;
+    top: 0%;
+    margin-top: 5%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    float: left;
+    border-radius:2px;
+    overflow: auto; 
+    padding-bottom:50px 
+}}

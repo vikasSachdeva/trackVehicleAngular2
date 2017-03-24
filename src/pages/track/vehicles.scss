@@ -1,0 +1,131 @@
+.filter-section {
+    border-bottom: 1px solid;
+    border-color: color($colors, super-light-grey);
+    float: left;
+}
+
+.filter-section h2 {
+    float: left;
+    color: color($colors, primary);
+    font-size: 1.2rem;
+    font-weight: 600!important;
+    width: 100%;
+}
+
+.filter-tabs {
+    border-radius: 4px;
+    background-color: transparent;
+    color: color($colors, primary);
+    font-size: 1rem;
+    border-color: color($colors, mint-green);
+    border: 1px solid;
+    padding: 5px;
+    line-height: 1.43rem;
+    float: left;
+    margin: 3px 3px 0 0px;
+}
+
+.filter-tabs ion-icon {
+    font-size: 1.6rem;
+    float: right;
+    margin-left: 6px;
+}
+
+.track-area {
+    width: 100%;
+    float: left;
+    ion-list {
+        margin: 0px;
+        padding: 0px;
+    }
+    ion-item {
+        margin: 2px 0 0px;
+        padding: 0px;
+        background: color($colors, blue-light);
+    }
+    .item-inner {
+        margin: 0px;
+        padding: 0px!important;
+        ion-label {
+            margin: 0;
+            padding: 0px!important;
+        }
+        ion-label span {
+            margin: 0;
+            padding: 0px!important;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+    }
+}
+
+.select-md .select-icon {
+    display: none;
+}
+
+.filter-btn.select-md {
+    margin: 5px 8px 5px 0px
+}
+
+.filter-search {
+    width: 100%;
+    margin: 0.8rem 1rem;
+    height: 4.3rem;
+    text-align: left;
+    padding: 2px 5px;
+    border: 0
+}
+
+.filter-btnWraper {
+    background: color($colors, secondary);
+    color: #fff
+}
+
+.filter-btn {
+    max-width: 100%;
+    margin: 0.8rem 0;
+    height: 4.3rem;
+    text-align: left;
+}
+
+.vehicle-card ion-card-header {
+    border-bottom: 2px solid color($colors, light-grey);
+}
+
+.vehicle-card .icon-circle {
+    width: 45px;
+    height: 45px;
+    border: 1px solid color($colors, super-light-grey);
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    line-height: 45px;
+    float: left;
+    margin-right: 10px;
+}
+
+.sort-menu {
+    max-width: 100%!important;
+}
+
+.platform-ios .SearchIos {
+    top: 20px!important;
+}
+
+.global-search {
+    position: absolute;
+    top: 6px;
+    left: 0;
+}
+
+.loader {
+    padding: 5px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 1px 5px #ccc;
+    height: 42px;
+    width: 42px;
+    border-radius: 100px;
+}

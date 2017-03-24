@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>{{header}}</ion-title>
+
+        <!--<ion-buttons end>
+      <button ion-button>
+        <ion-icon name="md-person"></ion-icon>
+      </button>
+    </ion-buttons>-->
+
+
+        <ion-buttons end>
+            <button ion-button>
+            <ion-icon name="notifications" color="yellow"></ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+
+    <div class="min-container">
+        <div padding-h-md>
+            <ion-list margin-top>
+                <!-- <ion-list margin-top *ngFor="let item of activity" >  -->
+                <ion-item *ngFor="let state of activity.options.set">
+                    <ion-label>{{state.label}}</ion-label>
+                    <ion-checkbox color="primary" [disabled]="activity.options.end_time!=false" checked="true" [(ngModel)]="state.isChecked"></ion-checkbox>
+                </ion-item>
+
+                <ion-item margin-top *ngIf="activity.options.end_time!=false">
+                    <p><strong>Supervisor:</strong> {{activity.options.markedBy?currentUser.name:''}}</p>
+                    <p><strong>Marked On:</strong> {{(activity.options.end_time | date:'MM/dd/yyyy @ h:mma') || 'Pending'}}</p>
+
+                </ion-item>
+            </ion-list>
+        </div>
+    </div>
+</ion-content>
+<ion-footer padding-h-xs>
+    <!--<button ion-button block *ngIf="hideButton(activity);" (click)="saveData()">{{(activity.options.set | searchAnywhere:'filter':'\"isChecked\":false').length!=0?'Save State':'Mark Gate In'}}</button>-->
+    <button ion-button block *ngIf="hideButton(activity);" (click)="saveData()">{{(activity.options.set | searchAnywhere:'filter':'\"isChecked\":false').length!=0?'Save State':(isGateIn?'Mark Gate in':'Mark Gate Out')}}</button>
+
+
+</ion-footer>

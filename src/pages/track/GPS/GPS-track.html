@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>GPS Device </ion-title>
+
+        <!--<ion-buttons end>
+      <button ion-button>
+        <ion-icon name="md-person"></ion-icon>
+      </button>
+    </ion-buttons>-->
+
+
+        <ion-buttons end>
+            <button ion-button>
+            <ion-icon name="notifications" color="yellow"></ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div padding-h-md>
+        <ion-list margin-top>
+            <ion-item>
+                <ion-label floating>Device ID</ion-label>
+                <ion-input type="text" [disabled]="activity.end_time!=false" [(ngModel)]="activity.data.deviceId" left text-left></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>GPS Mobile No.</ion-label>
+                <ion-input type="text" left text-left [disabled]="activity.end_time!=false" [(ngModel)]="activity.data.gpsMobile"></ion-input>
+            </ion-item>
+            <ion-item>
+                <p>GPS Position: <span color="danger">{{activity.end_time!=false? '28.0796097, 78.78675897':'pending'}}</span></p>
+            </ion-item>
+            <ion-item margin-top *ngIf="activity.end_time!=false">
+                <p><strong>Supervisor:</strong> {{activity.markedBy?currentUser.name:''}}</p>
+                <p><strong>TimeStamp:</strong> {{activity.end_time |date:'MM/dd/yyyy @ h:mma'}}</p>
+            </ion-item>
+        </ion-list>
+    </div>
+
+</ion-content>
+<ion-footer padding-h-xs><button *ngIf="activity.end_time==false" ion-button block (click)="tagGPS(activity.index,activity.empArray)">Submit</button></ion-footer>

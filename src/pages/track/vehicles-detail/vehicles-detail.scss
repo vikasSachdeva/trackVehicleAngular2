@@ -1,0 +1,353 @@
+vehicles-detail {
+    .filter-section {
+        border-bottom: 1px solid;
+        border-color: color($colors, super-light-grey);
+        float: left;
+    }
+    .filter-section h2 {
+        float: left;
+        color: color($colors, primary);
+        font-size: 1.2rem;
+        font-weight: 600!important;
+        width: 100%;
+    }
+    .filter-tabs {
+        border-radius: 4px;
+        background-color: transparent;
+        color: color($colors, primary);
+        font-size: 1rem;
+        border-color: color($colors, mint-green);
+        border: 1px solid;
+        padding: 5px;
+        line-height: 1.43rem;
+        float: left;
+        margin: 3px 3px 0 0px;
+    }
+    .filter-tabs ion-icon {
+        font-size: 1.6rem;
+        float: right;
+        margin-left: 6px;
+    }
+    .track-detail {
+        width: 100%;
+        float: left;
+    }
+    .card-hd {
+        background: color($colors, super-light-grey);
+    }
+    .track-detail ion-list p {
+        font-size: 1.4rem;
+        line-height: normal;
+        text-overflow: inherit;
+        color: #666;
+        padding: 5px 16px;
+        margin: 0px;
+    }
+    .item-md.item-block .item-inner {
+        // border-bottom: 1px solid #dedede!important;
+        padding: 0px!important;
+        margin: 0px!important;
+    }
+    ion-label {
+        padding: 0px!important;
+        margin: 0px!important;
+    }
+
+    .header-bg{
+       background: color($colors, primary);
+       min-height: 37px;
+    }
+}
+
+vehicles-detail {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    ion-scroll {
+        position: relative;
+        height: 100%;
+
+    }
+    %clearfix {
+        &:after,
+        &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            clear: both;
+        }
+    }
+    // Timeline
+    // ######Done########
+     .timeline-item.done .timeline-icon{
+                border: 5px solid color($colors, green);
+            }
+ // ######Current########
+     .timeline-item.current .timeline-icon{
+                border: 5px solid color($colors, primary);
+            }
+             // ######Pending########
+     .timeline-item.pending .timeline-icon{
+                border: 5px solid color($colors, orange);
+            }
+
+
+
+    #timeline {
+        width: 100%;
+        margin: 15px 0px auto;
+        position: relative;
+        padding:20px;
+        transition: all .4s ease;
+        &:before {
+            content: "";
+            width: 1px;
+            height: 91%;
+            border-right: 2px dashed color($colors, blue-grey);
+            left: 49.5%;
+            top: 3.2%;
+            position: absolute;
+        }
+        &:after {
+            content: "";
+            clear: both;
+            display: table;
+            width: 100%;
+        }
+     
+
+        .timeline-item.done:nth-child(odd) .timeline-content p, .timeline-item.current:nth-child(odd) .timeline-content p, .timeline-item.pending:nth-child(odd) .timeline-content p{text-align: right}
+
+        //  ####### done  ######
+
+        .timeline-item.done:nth-child(odd) .timeline-content{border-width:1px 3px 1px 1px; border-style:solid; border-color:color($colors, green);  }
+        .timeline-item.done:nth-child(odd) .timeline-content::before {
+             border-left-color:color($colors, green);
+             border-left-style: solid;
+        }
+        .timeline-item.done:nth-child(even) .timeline-content{border-width:1px 1px 1px 3px; border-style:solid; border-color:color($colors, green);  }
+        .timeline-item.done:nth-child(even) .timeline-content::before {
+             border-right-color:color($colors, green);
+             border-right-style: solid;
+        }
+        //  ####### currnet  ######
+
+        .timeline-item.current:nth-child(odd) .timeline-content{border-width:1px 3px 1px 1px; border-style:solid; border-color:color($colors, primary);  }
+        .timeline-item.current:nth-child(odd) .timeline-content::before {
+             border-left-color:color($colors, primary);
+             border-left-style: solid;
+        }
+        .timeline-item.current:nth-child(even) .timeline-content{border-width:1px 1px 1px 3px; border-style:solid; border-color:color($colors, primary);  }
+        .timeline-item.current:nth-child(even) .timeline-content::before {
+             border-right-color:color($colors, primary);
+             border-right-style: solid;
+        }
+        //  ####### Pending  ######
+
+        .timeline-item.pending:nth-child(odd) .timeline-content{border-width:1px 3px 1px 1px; border-style:solid; border-color:color($colors, orange);  }
+        .timeline-item.pending:nth-child(odd) .timeline-content::before {
+             border-left-color:color($colors, orange);
+             border-left-style: solid;
+        }
+        .timeline-item.pending:nth-child(even) .timeline-content{border-width:1px 1px 1px 3px; border-style:solid; border-color:color($colors, orange);  }
+        .timeline-item.pending:nth-child(even) .timeline-content::before {
+             border-right-color:color($colors, orange);
+             border-right-style: solid;
+        }
+
+        .timeline-item {
+            margin-bottom: 0px;
+            position: relative;
+           
+            @extend %clearfix;
+            .timeline-icon {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 10%;
+                left: 49.4%;
+                overflow: hidden;
+                margin-left: -7px;
+                border-radius: 50%;
+               
+                background:#fff;
+               
+            }
+            .timeline-content {
+                background:color($colors, light);
+                width: 45%;
+             
+                padding: 5px 10px;
+                // box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+                transition: all .3s ease;
+                border-radius: 5px;
+                
+                p{margin:5px 0}
+                p:first-child{font-size: 1.8rem}
+                ion-row.content {
+                    padding-top: 15px;
+                    ion-col {
+                        padding: 0;
+                        position: relative;
+                        p {
+                            margin-bottom: 15px;
+                            padding-left: 5px;
+                            margin: 0;
+                            font-size: 1.4rem;
+                            color: color($colors, mint-grey);
+                        }
+                    }
+                    ion-col[width-30] {
+                        flex: 0 0 30%;
+                        max-width: 30%;
+                    }
+                }
+                ion-row.social {
+                    margin: -15px 0 10px 0;
+                    position: relative;
+                    padding: 0 !important;
+                    bottom: 0;
+                    ion-icon {
+                        padding-left: 10px;
+                        font-size: 1.8rem;
+                        color: color($colors, primary);
+                    }
+                    span {
+                        font-size: 1rem;
+                        color: color($colors, mint-grey);
+                        margin-right: -10px;
+                        padding-left: 10px;
+                    }
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                   
+                    top: 10%;
+                    width: 0;
+                    height: 0;
+                }
+                &.right {
+                    float: right;
+                    &:before {
+                        content: '';
+                        right: 45%;
+                        left: inherit;
+                        border-left: 0;
+                    }
+                }
+            }
+        }
+
+            .timeline-item:nth-child(odd) .timeline-content{float:left}
+            .timeline-item:nth-child(odd) .timeline-content::before{  
+                    left: 45%; 
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-left-width: 10px;
+                    
+                    }
+            .timeline-item:nth-child(even) .timeline-content{float:right}
+            .timeline-item:nth-child(even) .timeline-content::before{ 
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-right-width: 10px;  
+                    right: 45%;
+                    }
+
+    
+
+    }
+      .vendor-box{ border:1px solid #423e7c; border-radius:2px; width: 100%; float: left}
+      .list-border{border-bottom:1px solid #423e7c;}  
+      .locationSection {padding-left:0;padding-right:0}
+      .locationSection .item-inner{border-bottom:0px!important}
+      .locationSection .item-inner p{ width: 100%; white-space: nowrap; overflow: hidden;text-overflow: ellipsis;}
+      .md-card-container {position: static; float:none; height:auto}
+      .contentSection ion-list ion-item{padding-left:0px}
+      .contentSection ion-list ion-item p{padding-left:16px}
+      .black_overlay{
+			display: none;
+			position: fixed;
+			top: 0%;
+			left: 0%;
+			width: 100%;
+			height: 100%;
+			background-color: black;
+			z-index:1001;
+			-moz-opacity: 0.8;
+			opacity:.80;
+			filter: alpha(opacity=80);
+            overflow: hidden
+            
+		}
+		
+        
+
+    @media screen and (max-width: 550px) {
+         #timeline {
+            margin: 25px 30px;
+            padding: 0px;
+            width: 90%;
+            
+            &:before {
+                left: 0;
+                top: 10px;
+                height:92%;
+            }
+            .timeline-item {
+                margin-bottom: 40px;
+                .timeline-content {
+                    
+                    width: 90%;
+                    float: right;
+                    // &:before,
+                    // &.right:before {
+                    //     left: 10%;
+                    //     margin-left: -10px;
+                    //     border-left: 0;
+                    //     // border-right:7px solid color($colors, primary);
+                    // }
+                }
+
+                .timeline-icon {
+                    left: 0;
+                }
+            }
+        }
+        
+        .timeline-item.done:nth-child(odd) .timeline-content{border-width:1px 1px 1px 3px!important;border-style:solid; border-color:color($colors, green);}
+        .timeline-item.current:nth-child(odd) .timeline-content{border-width:1px 1px 1px 3px!important;border-style:solid; border-color:color($colors, primary);}
+        .timeline-item.pending:nth-child(odd) .timeline-content{border-width:1px 1px 1px 3px!important;border-style:solid; border-color:color($colors, orange);}
+
+
+        .timeline-item.done:nth-child(odd) .timeline-content p, .timeline-item.current:nth-child(odd) .timeline-content p, .timeline-item.pending:nth-child(odd) .timeline-content p{text-align: left!important;}
+        
+        .timeline-item.done:nth-child(odd) .timeline-content::before {
+             border-right-color:color($colors, green);
+             border-right-style: solid;
+             border-left-style: none!important;
+        }
+        .timeline-item.current:nth-child(odd) .timeline-content::before {
+             border-right-color:color($colors, primary);
+             border-right-style: solid;
+             border-left-style: none!important;
+        }
+
+        .timeline-item.pending:nth-child(odd) .timeline-content::before {
+             border-right-color:color($colors, orange);
+             border-right-style: solid;
+             border-left-style: none!important;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content,.timeline-item:nth-child(even) .timeline-content{float:right!important}
+        .timeline-item:nth-child(odd) .timeline-content::before,.timeline-item:nth-child(even) .timeline-content::before{  
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-right-width: 10px;
+                right: 90%!important;
+                left: auto!important;
+                }
+    }
+    
+}

@@ -1,0 +1,35 @@
+new-request {
+   h5 {color: #009688; margin-bottom:0px!important}
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    border-bottom-color: color($colors, light-grey);
+    box-shadow: inset 0 -1px 0 0 color($colors, light-grey);
+  }
+
+  ion-select {max-width: 100%;text-align: right; width: 100%;}
+
+  .text-input-md {font-weight: 400;}
+
+  ion-label {overflow: initial; }
+
+  .ReqCard{margin-left:0px;margin-right:0px; width:100%}
+
+  .createReqList ion-item{color: color($colors, light-grey); font-size: 1.6rem; padding-left:0px;margin-right:0px}
+
+  .rowheading ion-col ion-label{font-weight: bold}
+
+  .userFilter{padding-left:0px}
+
+  .rowcontent{border-bottom: 1px solid color($colors, light-grey);font-size: 1.6rem;font-size: 1.6rem;}
+
+  // .rowcontent:nth-child(odd){background: #f8f8f8}
+  .searchbar{display:block}
+
+  p.description{
+    margin: 0 0 2px;
+    font-size: 1.6rem;
+    line-height: normal;
+    text-overflow: inherit;
+    color: color($colors, light-grey);
+    border-top: 1px solid color($colors, light-grey);
+    padding-top: 16px;}
+  }

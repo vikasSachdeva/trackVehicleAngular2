@@ -1,0 +1,96 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+<ion-icon name="menu"></ion-icon>
+</button>
+        <ion-title>Requests</ion-title>
+        <ion-buttons end>
+            <topnav-bar></topnav-bar>
+        </ion-buttons>
+
+    </ion-navbar>
+
+    <ion-toolbar padding-sm>
+        <ion-buttons start padding-l-sm>
+            <button ion-fab mini [navPush]="newRequest" color="green" [navParams]="item" no-margin> <ion-icon class="fa fa-plus"></ion-icon></button>
+        </ion-buttons>
+        <div no-margin class="relative">
+            <div padding-r-lg style="position: absolute; right: 0px; z-index: 2000;" colors="light">
+                <div class="sort-menu" padding-t-md text-right></div>
+                <ion-select [(ngModel)]="sortBy" color="danger" margin-t-lg>
+                    <ion-option value="" selected="true">All</ion-option>
+                    <ion-option value="vehicle_count">Vehicle Count</ion-option>
+                    <ion-option value="vehicle_type">Vehicle Type</ion-option>
+                </ion-select>
+            </div>
+            <ion-searchbar no-padding placeholder="Search Contacts..." [(ngModel)]="usersearch" [showCancelButton]="shouldShowCancel"
+                (ionCancel)="onCancel($event)">
+                </ion-searchbar>
+        </div>
+    </ion-toolbar>
+
+
+</ion-header>
+<ion-content no-margin style="padding-bottom:60px!important;">
+    <div class="md-card-container">
+        <div class="loader" *ngIf="loading">
+            <ion-spinner name="crescent"></ion-spinner>
+        </div>
+
+        <div class="col-sm-6 col-md-6 col-lg-6 menuOpen-md" no-padding *ngFor="let request of result | async | searchAnywhere : 'filter' : usersearch :sortBy | searchAnywhere : 'orderBy' :sortBy;let i = index">
+
+
+            <ion-card>
+                <div no-padding margin-t-sm>
+                    <div class="col-xs-6">
+                        <h2>
+                            <div class="pull-left" margin-b-lg margin-r-sm>
+                                <i class="fa fa-truck fa-flip-horizontal fa-1x" aria-hidden="true" color="secondary"></i>
+                            </div>
+                            {{request.vehicle_type}}</h2>
+                        <p color="primary" font-xs>{{request.vehicle_count}} Vechicles</p>
+                    </div>
+
+                    <div class="col-xs-6" no-padding>
+                        <div class="pull-right assigned-box">
+                            <span *ngIf="request.vehicles" class="assigned-box">
+                        <h2 *ngIf="request.vehicles.length > 0" [navPush]="vehiclesComponent" [navParams]="request" padding-r-md>
+                            <ion-badge color="yellow">{{request.vehicles.length}} / {{request.vehicle_count}}</ion-badge> <span font-xs>Vehicles assigned</span>
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                        </h2>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <ion-item color="secondary" class="locationSection" padding-v-sm padding-h-xs>
+                    <ion-row>
+                        <ion-col no-padding class="row">
+                            <div class="col-xs-5 col-sm-5" text-left padding-l-lg padding-r-xs>
+                                <h3 color="light" font-lg>FROM</h3>
+                                <p color="light" class="ellipsis-txt" *ngIf="request.source" font-sm>{{request.source.plant_name}}</p>
+                                <p color="light" class="ellipsis-txt" *ngIf="!request.source" font-sm>
+                                    <ion-spinner name="bubbles"></ion-spinner>
+                                </p>
+                                <p color="primary" font-xs class="ellipsis-txt">{{request.depart_datetime |date:medium}} - {{request.depart_datetime| date:'HH:MM'}}</p>
+                            </div>
+                            <div class="col-xs-2 col-sm-2" text-center font-sm padding-t-lg margin-t-sm>
+                                <i class="fa fa-exchange" aria-hidden="true" color="light"></i>
+                            </div>
+                            <div class="col-xs-5 col-sm-5" padding-r-lg padding-l-xs text-left>
+                                <h3 color="light" font-lg>TO</h3>
+                                <p color="light" font-sm class="ellipsis-txt" *ngIf="request.destination">{{request.destination.plant_name}}</p>
+                                <p color="light" class="ellipsis-txt" *ngIf="!request.destination" font-sm>
+                                    <ion-spinner name="bubbles"></ion-spinner>
+                                </p>
+                                <p color="primary" font-xs class="ellipsis-txt">{{request.expected_datetime |date:medium}} - {{request.expected_datetime| date:'HH:MM'}}</p>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-item>
+
+            </ion-card>
+        </div>
+    </div>
+</ion-content>

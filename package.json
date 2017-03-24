@@ -1,0 +1,80 @@
+{
+  "name": "ion-full-starter-theme-2",
+  "author": "Spencer Odai",
+  "homepage": "http://ionicity.com/",
+  "private": true,
+  "config": {
+    "ionic_bundler": "webpack",
+    "ionic_source_map": "source-map",
+    "ionic_copy": "./config/copy.config.js",
+    "ionic_sass": "./config/sass.config.js"
+  },
+  "scripts": {
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve"
+  },
+  "dependencies": {
+    "@angular/common": "2.2.1",
+    "@angular/compiler": "2.2.1",
+    "@angular/compiler-cli": "2.2.1",
+    "@angular/core": "2.2.1",
+    "@angular/forms": "2.2.1",
+    "@angular/http": "2.2.1",
+    "@angular/platform-browser": "2.2.1",
+    "@angular/platform-browser-dynamic": "2.2.1",
+    "@angular/platform-server": "2.2.1",
+    "@ionic/storage": "1.1.7",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.19",
+    "angular2-moment": "^1.0.0-beta.rc.1",
+    "angularfire2": "^2.0.0-beta.7",
+    "chart.js": "^2.4.0",
+    "firebase": "^3.6.9",
+    "font-awesome": "^4.7.0",
+    "ionic-angular": "2.0.0-rc.4",
+    "ionic-native": "2.2.11",
+    "ionicons": "3.0.0",
+    "moment": "^2.16.0",
+    "ng2-bootstrap": "^1.1.16",
+    "ng2-charts": "^1.4.4",
+    "ng2-dnd": "^2.0.1",
+    "ng2-ui-auth": "^5.0.0",
+    "ng2-validation": "^3.1.2",
+    "rxjs": "5.0.0-beta.12",
+    "socket.io-client": "^1.7.1",
+    "zone.js": "0.6.26"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "^1.0.0",
+    "@types/socket.io-client": "^1.4.29",
+    "typescript": "2.0.9"
+  },
+  "cordovaPlugins": [
+    "ionic-plugin-keyboard",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-console",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-device",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-camera",
+    "cordova-plugin-compat",
+    "cordova.plugins.diagnostic",
+    {
+      "id": "phonegap-plugin-push",
+      "locator": "phonegap-plugin-push",
+      "variables": {
+        "SENDER_ID": "755882045301"
+      }
+    },
+    "cordova-plugin-calendar"
+  ],
+  "cordovaPlatforms": [
+    {
+      "platform": "android",
+      "version": "",
+      "locator": "android"
+    }
+  ],
+  "description": "ion-full-starter-template-2: An Ionic project"
+}

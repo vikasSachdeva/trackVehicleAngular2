@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+     <ion-title>Loading</ion-title>
+
+    <!--<ion-buttons end>
+      <button ion-button>
+        <ion-icon name="md-person"></ion-icon>
+      </button>
+    </ion-buttons>-->
+
+    
+        <ion-buttons end>
+        <button ion-button>
+            <ion-icon name="notifications" color="yellow"></ion-icon>
+        </button>
+        </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content >
+  <div padding-h-md>
+<ion-list margin-top>
+        <ion-item>
+        <ion-label floating>Type Of Goods</ion-label>
+            <ion-input type="text"  [disabled]="activity.end_time!=false" [(ngModel)]="activity.data.type_of_goods" left text-left></ion-input>
+            
+            
+        </ion-item>
+       <!--<ion-item>
+         <ion-label floating>GPS Mobile No.</ion-label>
+            <ion-input type="text" left text-left [(ngModel)]="activity.options.data.gpsMobile"></ion-input>
+       </ion-item>
+        <ion-item>
+           <p>GPS Position: <span color="danger">{{activity.options.end_time!=null? '28.0796097, 78.78675897':'pending'}}</span></p>
+        </ion-item>
+        <ion-item margin-top>
+           <p><strong>Supervisor:</strong> John Snow</p>
+           <p><strong>TimeStamp:</strong> {{activity.options.end_time!=null?activity.options.end_time:'pending'}}</p>
+        </ion-item>-->
+    </ion-list>
+  </div>
+
+</ion-content>
+   <ion-footer padding-h-xs><button ion-button block  *ngIf="activity.end_time==false" (click)="saveLoading(activity.data.type_of_goods)">Submit</button></ion-footer> 

@@ -1,0 +1,160 @@
+vendor-requests {
+    h5 {
+        color: color($colors, primary);
+        margin-bottom: 0px!important
+    }
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+        border-bottom-color: color($colors, blue-light);
+        box-shadow: inset 0 -1px 0 0 color($colors, blue-light);
+    }
+    ion-select {
+        max-width: 100%;
+        text-align: right;
+        width: 100%;
+    }
+    .text-input-md {
+        font-weight: 400;
+    }
+    ion-label {
+        overflow: initial;
+    }
+    .ReqCard {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%
+    }
+    .createReqList ion-item {
+        color: color($colors, blue-light);
+        font-size: 1.6rem;
+        padding-left: 0px;
+        margin-right: 0px
+    }
+    .rowheading ion-col ion-label {
+        font-weight: bold
+    }
+    .userFilter {
+        padding-left: 0px
+    }
+    .rowcontent {
+        border-bottom: 1px solid color($colors, mint-green);
+        font-size: 1.6rem;
+        font-size: 1.6rem;
+    }
+    // .rowcontent:nth-child(odd){background: #f8f8f8}
+    .searchbar {
+        display: block
+    }
+    .view-list {
+        .buttonWarp ion-label.label-md {
+            white-space: normal!important;
+            margin: 0
+        }
+        .buttonWarp .item-inner {
+            padding-right: 0px
+        }
+        .button-md {
+            overflow: hidden;
+            padding: 0 1.1em;
+            height: 3.6rem;
+            border-radius: 2px;
+            font-size: 1.4rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        .item-md p {
+            font-size: 1em
+        }
+    }
+
+    .duration_box{  padding: 5px 15px; background: color($colors, primary); width: auto; }
+
+    .scroll-content {
+        padding: 0px;
+}
+}
+
+.vendor-card label,
+.vendor-card .label-md{ margin: 3px 8px 3px!important;}
+// .vendor-ca .item-md{}
+
+.width-45{ width:45%}
+.about-bg {
+    border-top: 58px solid color($colors, primary);
+    border-right: 0px solid color($colors, primary);
+    position: relative;
+    .profile-content-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 10px 0 0 0px;
+      .title {
+        font-size: 2.775rem;
+        margin:0;
+        color: color($colors, light);
+        font-weight: normal;
+      }
+      .subtitle {
+        font-size: 0.975rem;
+        color: #f4f4f4;
+        font-weight: normal;
+        padding: 5px 7px;
+        border-radius: 20px;
+        background: rgba(140, 133, 133, 0.34);
+      }
+    }
+  }
+   .profile-info {
+      position: absolute;
+      top: -50px;
+      width: 100px;
+      height:100px;
+      z-index: 2;
+      margin:auto;
+      left: 0;
+      right: 0;
+      border-radius: 10px;
+      background: #fff;
+      overflow: hidden;
+      text-align: center;
+      .profile-image {
+         display: block;
+         width: 85px;
+         margin: 9px auto;
+         overflow: hidden;
+         border-radius: 10px;
+  
+    }
+    }
+
+    .about-content{ padding-top:70px;
+    
+    h2{font-size:2.2rem }
+    .about_text_small{margin-top:100px}
+    
+    }
+    
+
+    .file-upload {
+  position: relative;
+  overflow: hidden;
+  margin:-25px 10px 10px 10px;
+  padding: 10px;
+  background: #fff;
+  width:50px;
+  height: 50px;
+  border-radius:50px;
+  float:right }
+
+.file-upload input.file-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+//   filter: alpha(opacity=0); }
+
+}

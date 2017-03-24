@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Vendor Request</ion-title>
+        <ion-buttons end>
+            <!--<topnav-bar></topnav-bar>-->
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content no-margin>
+    <div class="md-card-container">
+        <div class="loader" *ngIf="loading">
+            <ion-spinner name="crescent"></ion-spinner>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6" no-padding *ngFor="let vehicle of vendorRequestsArray | async ; let i = index ">
+            <ion-card [navPush]="ViewRequest" [navParams]="vehicle" class="custom vendor-card" *ngIf="vehicle.request">
+                <div no-padding margin-t-sm>
+                    <div class="col-xs-10">
+                        <h2>
+                            <div class="pull-left" margin-b-lg margin-r-sm><i class="fa fa-user fa-lg" color="primary" aria-hidden="true" color="secondary"></i></div>
+                            {{vehicle.request.supervisor?.name}}
+                        </h2>
+                        <p color="primary" font-xs>wants to book <span>{{vehicle.vehicle_count}}</span> ({{vehicle.request.vehicle_type}}) Vehicle for</p>
+                    </div>
+                    <div class="col-xs-2"><i class="fa fa-angle-right fa-lg pull-right" aria-hidden="true" margin-t-md color="secondary"></i></div>
+                </div>
+                <ion-item color="secondary" class="locationSection" padding-v-sm padding-h-xs>
+                    <ion-row>
+                        <ion-col no-padding class="row">
+                            <div class="col-xs-5 col-sm-5" text-left padding-l-lg padding-r-xs>
+                                <h3 color="light" font-lg>FROM</h3>
+                                <p color="light" font-sm>{{vehicle.request.source.plant_name}}</p>
+                                <p color="light" font-xs>{{vehicle.request.depart_datetime |date:medium}} - {{vehicle.request.depart_datetime| date:'HH:MM'}}</p>
+                            </div>
+                            <div class="col-xs-2 col-sm-2" text-center padding-v-md font-sm margin-t-sm>
+                                <i class="fa fa-exchange" aria-hidden="true" color="light"></i>
+                            </div>
+                            <div class="col-xs-5 col-sm-5" padding-r-lg padding-l-xs text-left>
+                                <h3 color="light" font-lg>TO</h3>
+                                <p color="light" font-sm>{{vehicle.request.destination.plant_name}}</p>
+                                <p color="light" font-xs>{{vehicle.request.expected_datetime |date:medium}} - {{vehicle.request.expected_datetime| date:'HH:MM'}}</p>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-item>
+            </ion-card>
+        </div>
+    </div>
+</ion-content>
+<ion-footer>
+</ion-footer>

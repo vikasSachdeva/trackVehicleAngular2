@@ -1,0 +1,164 @@
+view-request {
+    h5 {
+        color: color($colors, primary);
+        margin-bottom: 0px!important
+    }
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+        border-bottom-color: color($colors, blue-light);
+        box-shadow: inset 0 -1px 0 0 color($colors, blue-light);
+    }
+    ion-select {
+        max-width: 100%;
+        text-align: right;
+        width: 100%;
+    }
+    .text-input-md {
+        font-weight: 400;
+    }
+    ion-label {
+        overflow: initial;
+    }
+    .ReqCard {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%
+    }
+    .createReqList ion-item {
+        color: color($colors, blue-light);
+        font-size: 1.6rem;
+        padding-left: 0px;
+        margin-right: 0px
+    }
+    .rowheading ion-col ion-label {
+        font-weight: bold
+    }
+    .userFilter {
+        padding-left: 0px
+    }
+    .rowcontent {
+        border-bottom: 1px solid color($colors, mint-green);
+        font-size: 1.6rem;
+        font-size: 1.6rem;
+    }
+    // .rowcontent:nth-child(odd){background: #f8f8f8}
+    .searchbar {
+        display: block
+    }
+    ion-item {
+        margin: 2px 0 0px;
+        padding: 0px;
+        background: color($colors, blue-light);
+    }
+    .view-list {
+        ion-item {
+            margin: 2px 0 0px;
+            padding: 0px;
+            background: color($colors, blue-light);
+        }
+        .buttonWarp ion-label.label-md {
+            white-space: normal!important;
+            margin: 0
+        }
+        .buttonWarp .item-inner {
+            padding-right: 0px
+        }
+        .item-md p {
+            font-size: 1em
+        }
+    }
+    .custom ion-label {
+        margin: 0px 0;
+    }
+    .header-bg {
+        background: color($colors, primary);
+        min-height: 90px;
+    }
+}
+
+
+
+// .truck-container img {
+//     width: 66px;
+// }
+// .max-container .row:nth-child(2n+0) .f-left .truck-container {
+//     float: right;
+// }
+
+// .max-container .row:nth-child(2n+0) .f-left .truck-container-2 {
+//     float: right;
+// }
+
+
+// .max-container .row:nth-child(1n+0) .f-left .truck-container img {
+//     z-index: 9999;
+//     float: right;
+//     position: relative;
+//     bottom: -39px;
+//     left: 2px;
+// }
+
+// .max-container .row:nth-child(2n+0) .f-left .truck-container img {
+//     z-index: 9999;
+//     float: left;
+//     position: relative;
+//     bottom: -39px;
+//     left: -21px;
+
+//     -moz-transform: scaleX(-1);
+//     -o-transform: scaleX(-1);
+//     -webkit-transform: scaleX(-1);
+//     transform: scaleX(-1);
+//     filter: FlipH;
+//     -ms-filter: "FlipH";
+// }
+
+
+.request-detail-top-card{
+    min-height:300px; background:url(../img/road.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+
+}
+
+.request-detail-top-card .bg{ width: 100%; height:100%; position: absolute;
+  background: -moz-linear-gradient(45deg, rgba(255,77,61,0.8) 0%, rgba(84,74,158,1) 100%); /* ff3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,77,61,0.8)), color-stop(100%, rgba(84,74,158,1))); /* safari4+,chrome */
+background: -webkit-linear-gradient(45deg, rgba(255,77,61,0.8) 0%, rgba(84,74,158,1) 100%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(45deg, rgba(255,77,61,0.8) 0%, rgba(84,74,158,1) 100%); /* opera 11.10+ */
+background: -ms-linear-gradient(45deg, rgba(255,77,61,0.8) 0%, rgba(84,74,158,1) 100%); /* ie10+ */
+background: linear-gradient(45deg, rgba(255,77,61,0.8) 0%, rgba(84,74,158,1) 100%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#544A9E', endColorstr='#FF4D3D',GradientType=1 ); /* ie6-9 */
+}
+
+.request-detail-top-card .bg .custome-card{
+    max-width: 450px; margin:auto; left: 15px; right:15px; position: absolute;
+    // width: calc(100% - 20px);
+    border-radius: 2px;
+    font-size: 1.4rem;
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); 
+    bottom:15px; margin-top:15px;
+}
+
+
+@media screen and (max-width: 450px) {
+        .request-detail-top-card{
+            min-height:auto; background:none;
+            background-size: cover;
+            position: relative;
+            top:0px;
+
+        }
+        .request-detail-top-card .bg{background:none; position:initial; top: 0px; width: 100%; }
+        .request-detail-top-card .bg .custome-card{position: relative; left: 0px; right:0px;}
+}
+
+
+    @media screen and (max-width: 667px) {
+        .truck-container{display:none}
+        .max-container .row .f-left .truck-container{float:none}
+        .truck-container-2 ion-card{margin:0px!important}
+        .f-left{padding-top:0px!important}
+
+    }
+    

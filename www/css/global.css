@@ -1,0 +1,1871 @@
+/* +++++++++++++++++++++++++++++++++++++*/
+
+
+/* +++++++++++  Fonts  +++++++++++*/
+
+
+/* +++++++++++++++++++++++++++++++++++++*/
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* +++++++++++++++++++++++++++++++++++++*/
+
+
+/* +++++++++++  Css For iOS  +++++++++++*/
+
+
+/* +++++++++++++++++++++++++++++++++++++*/
+
+ion-app.ios [padding-xs],
+ion-app.ios [padding-xs] .scroll-content {
+    padding: 4px;
+}
+
+ion-app.ios [padding-sm],
+ion-app.ios [padding-sm] .scroll-content {
+    padding: 8px;
+}
+
+ion-app.ios [padding-md],
+ion-app.ios [padding-md] .scroll-content {
+    padding: 12px;
+}
+
+ion-app.ios [padding-lg],
+ion-app.ios [padding-lg] .scroll-content {
+    padding: 16px;
+}
+
+ion-app.ios [padding-v-xs],
+ion-app.ios [padding-v-xs] .scroll-content {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+ion-app.ios [padding-v-sm],
+ion-app.ios [padding-v-sm] .scroll-content {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+ion-app.ios [padding-v-md],
+ion-app.ios [padding-v-md] .scroll-content {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+ion-app.ios [padding-v-lg],
+ion-app.ios [padding-v-lg] .scroll-content {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.flex {
+    display: flex
+}
+
+ion-app.ios [padding-h-xs],
+ion-app.ios [padding-h-xs] .scroll-content {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+ion-app.ios [padding-h-sm],
+ion-app.ios [padding-h-sm] .scroll-content {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+ion-app.ios [padding-h-md],
+ion-app.ios [padding-h-md] .scroll-content {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+ion-app.ios [padding-h-lg],
+ion-app.ios [padding-h-lg] .scroll-content {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+ion-app.ios [padding-l-xs],
+ion-app.ios [padding-l-xs] .scroll-content {
+    padding-left: 4px;
+}
+
+ion-app.ios [padding-l-sm],
+ion-app.ios [padding-l-sm] .scroll-content {
+    padding-left: 8px;
+}
+
+ion-app.ios [padding-l-md],
+ion-app.ios [padding-l-md] .scroll-content {
+    padding-left: 12px;
+}
+
+ion-app.ios [padding-l-lg],
+ion-app.ios [padding-l-lg] .scroll-content {
+    padding-left: 16px;
+}
+
+ion-app.ios [padding-r-xs],
+ion-app.ios [padding-r-xs] .scroll-content {
+    padding-right: 4px;
+}
+
+ion-app.ios [padding-r-sm],
+ion-app.ios [padding-r-sm] .scroll-content {
+    padding-right: 8px;
+}
+
+ion-app.ios [padding-r-md],
+ion-app.ios [padding-r-md] .scroll-content {
+    padding-right: 12px;
+}
+
+ion-app.ios [padding-r-lg],
+ion-app.ios [padding-r-lg] .scroll-content {
+    padding-right: 16px;
+}
+
+ion-app.ios [padding-t-xs],
+ion-app.ios [padding-t-xs] .scroll-content {
+    padding-top: 4px;
+}
+
+ion-app.ios [padding-t-sm],
+ion-app.ios [padding-t-sm] .scroll-content {
+    padding-top: 8px;
+}
+
+ion-app.ios [padding-t-md],
+ion-app.ios [padding-t-md] .scroll-content {
+    padding-top: 12px;
+}
+
+ion-app.ios [padding-t-lg],
+ion-app.ios [padding-t-lg] .scroll-content {
+    padding-top: 16px;
+}
+
+ion-app.ios [padding-b-xs],
+ion-app.ios [padding-b-xs] .scroll-content {
+    padding-bottom: 4px;
+}
+
+ion-app.ios [padding-b-sm],
+ion-app.ios [padding-b-sm] .scroll-content {
+    padding-bottom: 8px;
+}
+
+ion-app.ios [padding-b-md],
+ion-app.ios [padding-b-md] .scroll-content {
+    padding-bottom: 12px;
+}
+
+ion-app.ios [padding-b-lg],
+ion-app.ios [padding-b-lg] .scroll-content {
+    padding-bottom: 16px;
+}
+
+ion-app.ios [padding-b-n],
+ion-app.ios [padding-b-n] .scroll-content {
+    padding-bottom: 0px;
+}
+
+
+/* +++++++++++++++++++++++++++++++++++++*/
+
+
+/* +++++++++  Css for Android ++++++++++*/
+
+
+/* +++++++++++++++++++++++++++++++++++++*/
+
+ion-app.md [padding-xs],
+ion-app.md [padding-xs] .scroll-content {
+    padding: 4px;
+}
+
+ion-app.md [padding-sm],
+ion-app.md [padding-sm] .scroll-content {
+    padding: 8px;
+}
+
+ion-app.md [padding-md],
+ion-app.md [padding-md] .scroll-content {
+    padding: 12px;
+}
+
+ion-app.md [padding-lg],
+ion-app.md [padding-lg] .scroll-content {
+    padding: 16px;
+}
+
+ion-app.md [padding-v-xs],
+ion-app.md [padding-v-xs] .scroll-content {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+ion-app.md [padding-v-sm],
+ion-app.md [padding-v-sm] .scroll-content {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+ion-app.md [padding-v-md],
+ion-app.md [padding-v-md] .scroll-content {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+ion-app.md [padding-v-lg],
+ion-app.md [padding-v-lg] .scroll-content {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+ion-app.md [padding-h-xs],
+ion-app.md [padding-h-xs] .scroll-content {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+ion-app.md [padding-h-sm],
+ion-app.md [padding-h-sm] .scroll-content {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+ion-app.md [padding-h-md],
+ion-app.md [padding-h-md] .scroll-content {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+ion-app.md [padding-h-lg],
+ion-app.md [padding-h-lg] .scroll-content {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+ion-app.md [padding-l-xs],
+ion-app.md [padding-l-xs] .scroll-content {
+    padding-left: 4px;
+}
+
+ion-app.md [padding-l-sm],
+ion-app.md [padding-l-sm] .scroll-content {
+    padding-left: 8px;
+}
+
+ion-app.md [padding-l-md],
+ion-app.md [padding-l-md] .scroll-content {
+    padding-left: 12px;
+}
+
+ion-app.md [padding-l-lg],
+ion-app.md [padding-l-lg] .scroll-content {
+    padding-left: 16px;
+}
+
+ion-app.md [padding-r-xs],
+ion-app.md [padding-r-xs] .scroll-content {
+    padding-right: 4px;
+}
+
+ion-app.md [padding-r-sm],
+ion-app.md [padding-r-sm] .scroll-content {
+    padding-right: 8px;
+}
+
+ion-app.md [padding-r-md],
+ion-app.md [padding-r-md] .scroll-content {
+    padding-right: 12px;
+}
+
+ion-app.md [padding-r-lg],
+ion-app.md [padding-r-lg] .scroll-content {
+    padding-right: 16px;
+}
+
+ion-app.md [padding-t-xs],
+ion-app.md [padding-t-xs] .scroll-content {
+    padding-top: 4px;
+}
+
+ion-app.md [padding-t-sm],
+ion-app.md [padding-t-sm] .scroll-content {
+    padding-top: 8px;
+}
+
+ion-app.md [padding-t-md],
+ion-app.md [padding-t-md] .scroll-content {
+    padding-top: 12px;
+}
+
+ion-app.md [padding-t-lg],
+ion-app.md [padding-t-lg] .scroll-content {
+    padding-top: 16px;
+}
+
+ion-app.md [padding-b-xs],
+ion-app.md [padding-b-xs] .scroll-content {
+    padding-bottom: 4px;
+}
+
+ion-app.md [padding-b-sm],
+ion-app.md [padding-b-sm] .scroll-content {
+    padding-bottom: 8px;
+}
+
+ion-app.md [padding-b-md],
+ion-app.md [padding-b-md] .scroll-content {
+    padding-bottom: 12px;
+}
+
+ion-app.md [padding-b-lg],
+ion-app.md [padding-b-lg] .scroll-content {
+    padding-bottom: 16px;
+}
+
+ion-app.md [padding-b-n],
+ion-app.md [padding-b-n] .scroll-content {
+    padding-bottom: 0px;
+}
+
+
+/* +++++++++++++++++++++++++++++++++++++*/
+
+
+/* +++++++++  Css For margin  ++++++++++*/
+
+
+/* +++++++++++++++++++++++++++++++++++++*/
+
+ion-app.ios [no-padding],
+ion-app.ios [no-padding] .scroll-content {
+    padding: 0px;
+}
+
+ion-app.md [no-padding],
+ion-app.md [no-padding] .scroll-content {
+    padding: 0px;
+}
+
+ion-app.ios [no-margin],
+ion-app.ios [no-margin] .scroll-content {
+    margin: 0px;
+}
+
+ion-app.md [no-margin],
+ion-app.md [no-margin] .scroll-content {
+    margin: 0px;
+}
+
+ion-app.ios [margin-xs],
+ion-app.ios [margin-xs] .scroll-content {
+    margin: 4px;
+}
+
+ion-app.ios [margin-sm],
+ion-app.ios [margin-sm] .scroll-content {
+    margin: 8px;
+}
+
+ion-app.ios [margin-md],
+ion-app.ios [margin-md] .scroll-content {
+    margin: 12px;
+}
+
+ion-app.ios [margin-lg],
+ion-app.ios [margin-lg] .scroll-content {
+    margin: 16px;
+}
+
+ion-app.ios [margin-v-xs],
+ion-app.ios [margin-v-xs] .scroll-content {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+ion-app.ios [margin-v-sm],
+ion-app.ios [margin-v-sm] .scroll-content {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+ion-app.ios [margin-v-md],
+ion-app.ios [margin-v-md] .scroll-content {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+ion-app.ios [margin-v-lg],
+ion-app.ios [margin-v-lg] .scroll-content {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+ion-app.ios [margin-h-xs],
+ion-app.ios [margin-h-xs] .scroll-content {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+ion-app.ios [margin-h-sm],
+ion-app.ios [margin-h-sm] .scroll-content {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+ion-app.ios [margin-h-md],
+ion-app.ios [margin-h-md] .scroll-content {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+ion-app.ios [margin-h-lg],
+ion-app.ios [margin-h-lg] .scroll-content {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+ion-app.ios [margin-l-xs],
+ion-app.ios [margin-l-xs] .scroll-content {
+    margin-left: 4px;
+}
+
+ion-app.ios [margin-l-sm],
+ion-app.ios [margin-l-sm] .scroll-content {
+    margin-left: 8px;
+}
+
+ion-app.ios [margin-l-md],
+ion-app.ios [margin-l-md] .scroll-content {
+    margin-left: 12px;
+}
+
+ion-app.ios [margin-l-lg],
+ion-app.ios [margin-l-lg] .scroll-content {
+    margin-left: 16px;
+}
+
+ion-app.ios [margin-r-xs],
+ion-app.ios [margin-r-xs] .scroll-content {
+    margin-right: 4px;
+}
+
+ion-app.ios [margin-r-sm],
+ion-app.ios [margin-r-sm] .scroll-content {
+    margin-right: 8px;
+}
+
+ion-app.ios [margin-r-md],
+ion-app.ios [margin-r-md] .scroll-content {
+    margin-right: 12px;
+}
+
+ion-app.ios [margin-r-lg],
+ion-app.ios [margin-r-lg] .scroll-content {
+    margin-right: 16px;
+}
+
+ion-app.ios [margin-t-xs],
+ion-app.ios [margin-t-xs] .scroll-content {
+    margin-top: 4px;
+}
+
+ion-app.ios [margin-t-sm],
+ion-app.ios [margin-t-sm] .scroll-content {
+    margin-top: 8px;
+}
+
+ion-app.ios [margin-t-md],
+ion-app.ios [margin-t-md] .scroll-content {
+    margin-top: 12px;
+}
+
+ion-app.ios [margin-t-lg],
+ion-app.ios [margin-t-lg] .scroll-content {
+    margin-top: 16px;
+}
+
+ion-app.ios [margin-b-xs],
+ion-app.ios [margin-b-xs] .scroll-content {
+    margin-bottom: 4px;
+}
+
+ion-app.ios [margin-b-sm],
+ion-app.ios [margin-b-sm] .scroll-content {
+    margin-bottom: 8px;
+}
+
+ion-app.ios [margin-b-md],
+ion-app.ios [margin-b-md] .scroll-content {
+    margin-bottom: 12px;
+}
+
+ion-app.ios [margin-b-lg],
+ion-app.ios [margin-b-lg] .scroll-content {
+    margin-bottom: 16px;
+}
+
+
+/* +++++++++++++++++++++++++++++++++++++*/
+
+
+/* +++++++++  Css for Android ++++++++++*/
+
+
+/* +++++++++++++++++++++++++++++++++++++*/
+
+ion-app.md [margin-xs],
+ion-app.md [margin-xs] .scroll-content {
+    margin: 4px;
+}
+
+ion-app.md [margin-sm],
+ion-app.md [margin-sm] .scroll-content {
+    margin: 8px;
+}
+
+ion-app.md [margin-md],
+ion-app.md [margin-md] .scroll-content {
+    margin: 12px;
+}
+
+ion-app.md [margin-lg],
+ion-app.md [margin-lg] .scroll-content {
+    margin: 16px;
+}
+
+ion-app.md [margin-v-xs],
+ion-app.md [margin-v-xs] .scroll-content {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+ion-app.md [margin-v-sm],
+ion-app.md [margin-v-sm] .scroll-content {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+ion-app.md [margin-v-md],
+ion-app.md [margin-v-md] .scroll-content {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+ion-app.md [margin-v-lg],
+ion-app.md [margin-v-lg] .scroll-content {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+ion-app.md [margin-h-xs],
+ion-app.md [margin-h-xs] .scroll-content {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+ion-app.md [margin-h-sm],
+ion-app.md [margin-h-sm] .scroll-content {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+ion-app.md [margin-h-md],
+ion-app.md [margin-h-md] .scroll-content {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+ion-app.md [margin-h-lg],
+ion-app.md [margin-h-lg] .scroll-content {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+ion-app.md [margin-l-xs],
+ion-app.md [margin-l-xs] .scroll-content {
+    margin-left: 4px;
+}
+
+ion-app.md [margin-l-sm],
+ion-app.md [margin-l-sm] .scroll-content {
+    margin-left: 8px;
+}
+
+ion-app.md [margin-l-md],
+ion-app.md [margin-l-md] .scroll-content {
+    margin-left: 12px;
+}
+
+ion-app.md [margin-l-lg],
+ion-app.md [margin-l-lg] .scroll-content {
+    margin-left: 16px;
+}
+
+ion-app.md [margin-r-xs],
+ion-app.md [margin-r-xs] .scroll-content {
+    margin-right: 4px;
+}
+
+ion-app.md [margin-r-sm],
+ion-app.md [margin-r-sm] .scroll-content {
+    margin-right: 8px;
+}
+
+ion-app.md [margin-r-md],
+ion-app.md [margin-r-md] .scroll-content {
+    margin-right: 12px;
+}
+
+ion-app.md [margin-r-lg],
+ion-app.md [margin-r-lg] .scroll-content {
+    margin-right: 16px;
+}
+
+ion-app.md [margin-t-xs],
+ion-app.md [margin-t-xs] .scroll-content {
+    margin-top: 4px;
+}
+
+ion-app.md [margin-t-sm],
+ion-app.md [margin-t-sm] .scroll-content {
+    margin-top: 8px;
+}
+
+ion-app.md [margin-t-md],
+ion-app.md [margin-t-md] .scroll-content {
+    margin-top: 12px;
+}
+
+ion-app.md [margin-t-lg],
+ion-app.md [margin-t-lg] .scroll-content {
+    margin-top: 16px;
+}
+
+ion-app.md [margin-b-xs],
+ion-app.md [margin-b-xs] .scroll-content {
+    margin-bottom: 4px;
+}
+
+ion-app.md [margin-b-sm],
+ion-app.md [margin-b-sm] .scroll-content {
+    margin-bottom: 8px;
+}
+
+ion-app.md [margin-b-md],
+ion-app.md [margin-b-md] .scroll-content {
+    margin-bottom: 12px;
+}
+
+ion-app.md [margin-b-lg],
+ion-app.md [margin-b-lg] .scroll-content {
+    margin-bottom: 16px;
+}
+
+.min-container {
+    max-width: 400px;
+    margin: auto;
+}
+
+
+.max-container {
+    width: 100%;
+    margin: auto;
+    float: left;
+}
+
+.drop-arrow::after {
+    content: "\f0d7";
+    margin: 0px 5px;
+}
+
+.popover::after {
+    content: "\f142";
+    margin: 0px 5px 0 10px;
+    color: #333;
+}
+
+.calendar::before {
+    content: "\f073";
+    margin: 0px 5px 0 0px;
+}
+
+.relative {
+    position: relative;
+}
+
+
+/* //////////////// Font-Size Variables CSS //////////////// */
+
+ion-app.md [font-xs],
+ion-app.md [font-xs] .scroll-content {
+    font-size: 12px!important;
+}
+
+ion-app.md [font-sm],
+ion-app.md [font-sm] .scroll-content {
+    font-size: 15px!important;
+}
+
+ion-app.md [font-md],
+ion-app.md [font-md] .scroll-content {
+    font-size: 17px!important;
+}
+
+ion-app.md [font-lg],
+ion-app.md [font-lg] .scroll-content {
+    font-size: 19px!important;
+}
+
+ion-app.md [font-xl],
+ion-app.md [font-xl] .scroll-content {
+    font-size: 21px!important;
+}
+
+ion-app.md [font-xxl],
+ion-app.md [font-xxl] .scroll-content {
+    font-size: 24px!important;
+}
+
+ion-app.md [uppercase],
+ion-app.md [uppercase] .scroll-content {
+    text-transform: uppercase!important;
+}
+
+ion-app.md [lowercase],
+ion-app.md [lowercase] .scroll-content {
+    text-transform: lowercase!important;
+}
+
+.white_content {
+			display: block;
+			position: fixed;
+			top: 25%;
+			left: 0%;
+            right:0px;
+            margin: auto;
+			width: 350px;
+			height: auto;
+			padding: 0;
+			background-color: white;
+			z-index:1002;
+			overflow: auto;
+		}
+.popupwraper{
+			height: auto;
+            min-height:150px;
+            max-height:350px;
+			overflow: auto;
+}
+        .popupwraper{position: relative}
+        .popupwraper ion-header{position: static;background:#504c8f; color:#fff }
+        .white_content .list-border{border-bottom:1px solid #eee}
+        .contentSection .list-border:last-child(){border-bottom:0!important}
+        .closBtn{float:right; top:0px; color:#fff}
+
+
+
+
+
+
+@media (max-width: 360px) {
+    ion-app.md [font-xxl],
+    ion-app.md [font-xxl] .scroll-content {
+        font-size: 19px!important;
+    }
+}
+
+
+/* +++++++++++++++++++++++++++++++++++++*/
+
+
+/* +++++++++  Css For margin  ++++++++++*/
+
+
+/* +++++++++++++++++++++++++++++++++++++*/
+
+ion-app.ios [no-padding],
+ion-app.ios [no-padding] .scroll-content {
+    padding: 0px;
+}
+
+
+/* //////////////// BOOTSTRAP CSS //////////////// */
+
+div#light {
+    display: none;
+}
+
+.popupwraper {
+    overflow-y: auto;
+    height: calc(100% - 40px);
+    margin-top: 40px;
+}
+
+.visible-xs {
+    display: none !important;
+}
+
+.visible-xs-block {
+    display: block;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col,
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col,
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12 {
+    float: left;
+}
+
+.col-xs-12 {
+    width: 100%;
+}
+
+.col-xs-11 {
+    width: 91.66666667%;
+}
+
+.col-xs-10 {
+    width: 83.33333333%;
+}
+
+.col-xs-9 {
+    width: 75%;
+}
+
+.col-xs-8 {
+    width: 66.66666667%;
+}
+
+.col-xs-7 {
+    width: 58.33333333%;
+}
+
+.col-xs-6 {
+    width: 50%;
+}
+
+.col-xs-5 {
+    width: 41.66666667%;
+}
+
+.col-xs-4 {
+    width: 33.33333333%;
+}
+
+.col-xs-3 {
+    width: 25%;
+}
+
+.col-xs-2 {
+    width: 16.66666667%;
+}
+
+.col-xs-1 {
+    width: 8.33333333%;
+}
+
+.col-xs-pull-12 {
+    right: 100%;
+}
+
+.col-xs-pull-11 {
+    right: 91.66666667%;
+}
+
+.col-xs-pull-10 {
+    right: 83.33333333%;
+}
+
+.col-xs-pull-9 {
+    right: 75%;
+}
+
+.col-xs-pull-8 {
+    right: 66.66666667%;
+}
+
+.col-xs-pull-7 {
+    right: 58.33333333%;
+}
+
+.col-xs-pull-6 {
+    right: 50%;
+}
+
+.col-xs-pull-5 {
+    right: 41.66666667%;
+}
+
+.col-xs-pull-4 {
+    right: 33.33333333%;
+}
+
+.col-xs-pull-3 {
+    right: 25%;
+}
+
+.col-xs-pull-2 {
+    right: 16.66666667%;
+}
+
+.col-xs-pull-1 {
+    right: 8.33333333%;
+}
+
+.col-xs-pull-0 {
+    right: auto;
+}
+
+.col-xs-push-12 {
+    left: 100%;
+}
+
+.col-xs-push-11 {
+    left: 91.66666667%;
+}
+
+.col-xs-push-10 {
+    left: 83.33333333%;
+}
+
+.col-xs-push-9 {
+    left: 75%;
+}
+
+.col-xs-push-8 {
+    left: 66.66666667%;
+}
+
+.col-xs-push-7 {
+    left: 58.33333333%;
+}
+
+.col-xs-push-6 {
+    left: 50%;
+}
+
+.col-xs-push-5 {
+    left: 41.66666667%;
+}
+
+.col-xs-push-4 {
+    left: 33.33333333%;
+}
+
+.col-xs-push-3 {
+    left: 25%;
+}
+
+.col-xs-push-2 {
+    left: 16.66666667%;
+}
+
+.col-xs-push-1 {
+    left: 8.33333333%;
+}
+
+.col-xs-push-0 {
+    left: auto;
+}
+
+.col-xs-offset-12 {
+    margin-left: 100%;
+}
+
+.col-xs-offset-11 {
+    margin-left: 91.66666667%;
+}
+
+.col-xs-offset-10 {
+    margin-left: 83.33333333%;
+}
+
+.col-xs-offset-9 {
+    margin-left: 75%;
+}
+
+.col-xs-offset-8 {
+    margin-left: 66.66666667%;
+}
+
+.col-xs-offset-7 {
+    margin-left: 58.33333333%;
+}
+
+.col-xs-offset-6 {
+    margin-left: 50%;
+}
+
+.col-xs-offset-5 {
+    margin-left: 41.66666667%;
+}
+
+.col-xs-offset-4 {
+    margin-left: 33.33333333%;
+}
+
+.col-xs-offset-3 {
+    margin-left: 25%;
+}
+
+.col-xs-offset-2 {
+    margin-left: 16.66666667%;
+}
+
+.col-xs-offset-1 {
+    margin-left: 8.33333333%;
+}
+
+.col-xs-offset-0 {
+    margin-left: 0%;
+}
+
+@media (max-width: 550px) {
+    .md-card-container{
+        background: none;
+        float:none;
+        left:0;
+        right: 0;
+        width:100%
+    }
+    .trname{  white-space: nowrap; overflow: hidden; text-overflow:ellipsis; }
+     .white_content {
+			display: block;
+			position: fixed;
+			top: 25%;
+			left: 0%;
+            right:0px;
+            margin: auto;
+			width: 80%;
+			height: auto;
+			padding: 0;
+			background-color: white;
+			z-index:1002;
+			overflow: auto;
+		}
+    .col-xs-3 {
+        width: 100%;
+    }
+    .edit-button{width:25%}
+    .visible-xs {
+        display: block !important;
+    }
+
+    .title-head{display: none !important;}
+}
+
+@media (min-width: 550px) {
+    .visible-xs {
+        display: block !important;
+    }
+    .visible-xs-block {
+        display: none;
+    }
+}
+
+
+
+@media (min-width: 650px) {
+
+    .visible-xs {
+        display: block !important;
+    }
+    .visible-xs-block {
+        display: none;
+    }
+    .col,
+    .col-sm-1,
+    .col-sm-2,
+    .col-sm-3,
+    .col-sm-4,
+    .col-sm-5,
+    .col-sm-6,
+    .col-sm-7,
+    .col-sm-8,
+    .col-sm-9,
+    .col-sm-10,
+    .col-sm-11,
+    .col-sm-12 {
+        float: left;
+    }
+    .col-sm-12 {
+        width: 100%;
+    }
+    .col-sm-11 {
+        width: 91.66666667%;
+    }
+    .col-sm-10 {
+        width: 83.33333333%;
+    }
+    .col-sm-9 {
+        width: 75%;
+    }
+    .col-sm-8 {
+        width: 66.66666667%;
+    }
+    .col-sm-7 {
+        width: 58.33333333%;
+    }
+    .col-sm-6 {
+        width: 50%;
+    }
+    .col-sm-5 {
+        width: 41.66666667%;
+    }
+    .col-sm-4 {
+        width: 33.33333333%;
+    }
+    .col-sm-3 {
+        width: 25%;
+    }
+    .col-sm-2 {
+        width: 16.66666667%;
+    }
+    .col-sm-1 {
+        width: 8.33333333%;
+    }
+    .col-sm-pull-12 {
+        right: 100%;
+    }
+    .col-sm-pull-11 {
+        right: 91.66666667%;
+    }
+    .col-sm-pull-10 {
+        right: 83.33333333%;
+    }
+    .col-sm-pull-9 {
+        right: 75%;
+    }
+    .col-sm-pull-8 {
+        right: 66.66666667%;
+    }
+    .col-sm-pull-7 {
+        right: 58.33333333%;
+    }
+    .col-sm-pull-6 {
+        right: 50%;
+    }
+    .col-sm-pull-5 {
+        right: 41.66666667%;
+    }
+    .col-sm-pull-4 {
+        right: 33.33333333%;
+    }
+    .col-sm-pull-3 {
+        right: 25%;
+    }
+    .col-sm-pull-2 {
+        right: 16.66666667%;
+    }
+    .col-sm-pull-1 {
+        right: 8.33333333%;
+    }
+    .col-sm-pull-0 {
+        right: auto;
+    }
+    .col-sm-push-12 {
+        left: 100%;
+    }
+    .col-sm-push-11 {
+        left: 91.66666667%;
+    }
+    .col-sm-push-10 {
+        left: 83.33333333%;
+    }
+    .col-sm-push-9 {
+        left: 75%;
+    }
+    .col-sm-push-8 {
+        left: 66.66666667%;
+    }
+    .col-sm-push-7 {
+        left: 58.33333333%;
+    }
+    .col-sm-push-6 {
+        left: 50%;
+    }
+    .col-sm-push-5 {
+        left: 41.66666667%;
+    }
+    .col-sm-push-4 {
+        left: 33.33333333%;
+    }
+    .col-sm-push-3 {
+        left: 25%;
+    }
+    .col-sm-push-2 {
+        left: 16.66666667%;
+    }
+    .col-sm-push-1 {
+        left: 8.33333333%;
+    }
+    .col-sm-push-0 {
+        left: auto;
+    }
+    .col-sm-offset-12 {
+        margin-left: 100%;
+    }
+    .col-sm-offset-11 {
+        margin-left: 91.66666667%;
+    }
+    .col-sm-offset-10 {
+        margin-left: 83.33333333%;
+    }
+    .col-sm-offset-9 {
+        margin-left: 75%;
+    }
+    .col-sm-offset-8 {
+        margin-left: 66.66666667%;
+    }
+    .col-sm-offset-7 {
+        margin-left: 58.33333333%;
+    }
+    .col-sm-offset-6 {
+        margin-left: 50%;
+    }
+    .col-sm-offset-5 {
+        margin-left: 41.66666667%;
+    }
+    .col-sm-offset-4 {
+        margin-left: 33.33333333%;
+    }
+    .col-sm-offset-3 {
+        margin-left: 25%;
+    }
+    .col-sm-offset-2 {
+        margin-left: 16.66666667%;
+    }
+    .col-sm-offset-1 {
+        margin-left: 8.33333333%;
+    }
+    .col-sm-offset-0 {
+        margin-left: 0%;
+    }
+}
+
+
+@media (min-width: 768px) {
+
+    .visible-xs {
+        display: block !important;
+    }
+    .visible-xs-block {
+        display: none;
+    }
+    .col,
+    .col-sm-1,
+    .col-sm-2,
+    .col-sm-3,
+    .col-sm-4,
+    .col-sm-5,
+    .col-sm-6,
+    .col-sm-7,
+    .col-sm-8,
+    .col-sm-9,
+    .col-sm-10,
+    .col-sm-11,
+    .col-sm-12 {
+        float: left;
+    }
+    .col-sm-12 {
+        width: 100%;
+    }
+    .col-sm-11 {
+        width: 91.66666667%;
+    }
+    .col-sm-10 {
+        width: 83.33333333%;
+    }
+    .col-sm-9 {
+        width: 75%;
+    }
+    .col-sm-8 {
+        width: 66.66666667%;
+    }
+    .col-sm-7 {
+        width: 58.33333333%;
+    }
+    .col-sm-6 {
+        width: 50%;
+    }
+    .col-sm-5 {
+        width: 41.66666667%;
+    }
+    .col-sm-4 {
+        width: 33.33333333%;
+    }
+    .col-sm-3 {
+        width: 25%;
+    }
+    .col-sm-2 {
+        width: 16.66666667%;
+    }
+    .col-sm-1 {
+        width: 8.33333333%;
+    }
+    .col-sm-pull-12 {
+        right: 100%;
+    }
+    .col-sm-pull-11 {
+        right: 91.66666667%;
+    }
+    .col-sm-pull-10 {
+        right: 83.33333333%;
+    }
+    .col-sm-pull-9 {
+        right: 75%;
+    }
+    .col-sm-pull-8 {
+        right: 66.66666667%;
+    }
+    .col-sm-pull-7 {
+        right: 58.33333333%;
+    }
+    .col-sm-pull-6 {
+        right: 50%;
+    }
+    .col-sm-pull-5 {
+        right: 41.66666667%;
+    }
+    .col-sm-pull-4 {
+        right: 33.33333333%;
+    }
+    .col-sm-pull-3 {
+        right: 25%;
+    }
+    .col-sm-pull-2 {
+        right: 16.66666667%;
+    }
+    .col-sm-pull-1 {
+        right: 8.33333333%;
+    }
+    .col-sm-pull-0 {
+        right: auto;
+    }
+    .col-sm-push-12 {
+        left: 100%;
+    }
+    .col-sm-push-11 {
+        left: 91.66666667%;
+    }
+    .col-sm-push-10 {
+        left: 83.33333333%;
+    }
+    .col-sm-push-9 {
+        left: 75%;
+    }
+    .col-sm-push-8 {
+        left: 66.66666667%;
+    }
+    .col-sm-push-7 {
+        left: 58.33333333%;
+    }
+    .col-sm-push-6 {
+        left: 50%;
+    }
+    .col-sm-push-5 {
+        left: 41.66666667%;
+    }
+    .col-sm-push-4 {
+        left: 33.33333333%;
+    }
+    .col-sm-push-3 {
+        left: 25%;
+    }
+    .col-sm-push-2 {
+        left: 16.66666667%;
+    }
+    .col-sm-push-1 {
+        left: 8.33333333%;
+    }
+    .col-sm-push-0 {
+        left: auto;
+    }
+    .col-sm-offset-12 {
+        margin-left: 100%;
+    }
+    .col-sm-offset-11 {
+        margin-left: 91.66666667%;
+    }
+    .col-sm-offset-10 {
+        margin-left: 83.33333333%;
+    }
+    .col-sm-offset-9 {
+        margin-left: 75%;
+    }
+    .col-sm-offset-8 {
+        margin-left: 66.66666667%;
+    }
+    .col-sm-offset-7 {
+        margin-left: 58.33333333%;
+    }
+    .col-sm-offset-6 {
+        margin-left: 50%;
+    }
+    .col-sm-offset-5 {
+        margin-left: 41.66666667%;
+    }
+    .col-sm-offset-4 {
+        margin-left: 33.33333333%;
+    }
+    .col-sm-offset-3 {
+        margin-left: 25%;
+    }
+    .col-sm-offset-2 {
+        margin-left: 16.66666667%;
+    }
+    .col-sm-offset-1 {
+        margin-left: 8.33333333%;
+    }
+    .col-sm-offset-0 {
+        margin-left: 0%;
+    }
+}
+
+@media (min-width:768px) and (max-width:980px) {  
+    .menuOpen-md {
+        float: left;
+        width: 100%!important;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .visible-xs {
+        display: block !important;
+    }
+    .visible-xs-block {
+        display: none;
+    }
+    .col,
+    .col-md-1,
+    .col-md-2,
+    .col-md-3,
+    .col-md-4,
+    .col-md-5,
+    .col-md-6,
+    .col-md-7,
+    .col-md-8,
+    .col-md-9,
+    .col-md-10,
+    .col-md-11,
+    .col-md-12 {
+        float: left;
+    }
+    .col-md-12 {
+        width: 100%;
+    }
+    .col-md-11 {
+        width: 91.66666667%;
+    }
+    .col-md-10 {
+        width: 83.33333333%;
+    }
+    .col-md-9 {
+        width: 75%;
+    }
+    .col-md-8 {
+        width: 66.66666667%;
+    }
+    .col-md-7 {
+        width: 58.33333333%;
+    }
+    .col-md-6 {
+        width: 50%;
+    }
+    .col-md-5 {
+        width: 41.66666667%;
+    }
+    .col-md-4 {
+        width: 33.33333333%;
+    }
+    .col-md-3 {
+        width: 25%;
+    }
+    .col-md-2 {
+        width: 16.66666667%;
+    }
+    .col-md-1 {
+        width: 8.33333333%;
+    }
+    .col-md-pull-12 {
+        right: 100%;
+    }
+    .col-md-pull-11 {
+        right: 91.66666667%;
+    }
+    .col-md-pull-10 {
+        right: 83.33333333%;
+    }
+    .col-md-pull-9 {
+        right: 75%;
+    }
+    .col-md-pull-8 {
+        right: 66.66666667%;
+    }
+    .col-md-pull-7 {
+        right: 58.33333333%;
+    }
+    .col-md-pull-6 {
+        right: 50%;
+    }
+    .col-md-pull-5 {
+        right: 41.66666667%;
+    }
+    .col-md-pull-4 {
+        right: 33.33333333%;
+    }
+    .col-md-pull-3 {
+        right: 25%;
+    }
+    .col-md-pull-2 {
+        right: 16.66666667%;
+    }
+    .col-md-pull-1 {
+        right: 8.33333333%;
+    }
+    .col-md-pull-0 {
+        right: auto;
+    }
+    .col-md-push-12 {
+        left: 100%;
+    }
+    .col-md-push-11 {
+        left: 91.66666667%;
+    }
+    .col-md-push-10 {
+        left: 83.33333333%;
+    }
+    .col-md-push-9 {
+        left: 75%;
+    }
+    .col-md-push-8 {
+        left: 66.66666667%;
+    }
+    .col-md-push-7 {
+        left: 58.33333333%;
+    }
+    .col-md-push-6 {
+        left: 50%;
+    }
+    .col-md-push-5 {
+        left: 41.66666667%;
+    }
+    .col-md-push-4 {
+        left: 33.33333333%;
+    }
+    .col-md-push-3 {
+        left: 25%;
+    }
+    .col-md-push-2 {
+        left: 16.66666667%;
+    }
+    .col-md-push-1 {
+        left: 8.33333333%;
+    }
+    .col-md-push-0 {
+        left: auto;
+    }
+    .col-md-offset-12 {
+        margin-left: 100%;
+    }
+    .col-md-offset-11 {
+        margin-left: 91.66666667%;
+    }
+    .col-md-offset-10 {
+        margin-left: 83.33333333%;
+    }
+    .col-md-offset-9 {
+        margin-left: 75%;
+    }
+    .col-md-offset-8 {
+        margin-left: 66.66666667%;
+    }
+    .col-md-offset-7 {
+        margin-left: 58.33333333%;
+    }
+    .col-md-offset-6 {
+        margin-left: 50%;
+    }
+    .col-md-offset-5 {
+        margin-left: 41.66666667%;
+    }
+    .col-md-offset-4 {
+        margin-left: 33.33333333%;
+    }
+    .col-md-offset-3 {
+        margin-left: 25%;
+    }
+    .col-md-offset-2 {
+        margin-left: 16.66666667%;
+    }
+    .col-md-offset-1 {
+        margin-left: 8.33333333%;
+    }
+    .col-md-offset-0 {
+        margin-left: 0%;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .visible-xs {
+        display: block !important;
+    }
+    .visible-xs-block {
+        display: none;
+    }
+    .col,
+    .col-lg-1,
+    .col-lg-2,
+    .col-lg-3,
+    .col-lg-4,
+    .col-lg-5,
+    .col-lg-6,
+    .col-lg-7,
+    .col-lg-8,
+    .col-lg-9,
+    .col-lg-10,
+    .col-lg-11,
+    .col-lg-12 {
+        float: left;
+    }
+    .col-lg-12 {
+        width: 100%;
+    }
+    .col-lg-11 {
+        width: 91.66666667%;
+    }
+    .col-lg-10 {
+        width: 83.33333333%;
+    }
+    .col-lg-9 {
+        width: 75%;
+    }
+    .col-lg-8 {
+        width: 66.66666667%;
+    }
+    .col-lg-7 {
+        width: 58.33333333%;
+    }
+    .col-lg-6 {
+        width: 50%;
+    }
+    .col-lg-5 {
+        width: 41.66666667%;
+    }
+    .col-lg-4 {
+        width: 33.33333333%;
+    }
+    .col-lg-3 {
+        width: 25%;
+    }
+    .col-lg-2 {
+        width: 16.66666667%;
+    }
+    .col-lg-1 {
+        width: 8.33333333%;
+    }
+    .col-lg-pull-12 {
+        right: 100%;
+    }
+    .col-lg-pull-11 {
+        right: 91.66666667%;
+    }
+    .col-lg-pull-10 {
+        right: 83.33333333%;
+    }
+    .col-lg-pull-9 {
+        right: 75%;
+    }
+    .col-lg-pull-8 {
+        right: 66.66666667%;
+    }
+    .col-lg-pull-7 {
+        right: 58.33333333%;
+    }
+    .col-lg-pull-6 {
+        right: 50%;
+    }
+    .col-lg-pull-5 {
+        right: 41.66666667%;
+    }
+    .col-lg-pull-4 {
+        right: 33.33333333%;
+    }
+    .col-lg-pull-3 {
+        right: 25%;
+    }
+    .col-lg-pull-2 {
+        right: 16.66666667%;
+    }
+    .col-lg-pull-1 {
+        right: 8.33333333%;
+    }
+    .col-lg-pull-0 {
+        right: auto;
+    }
+    .col-lg-push-12 {
+        left: 100%;
+    }
+    .col-lg-push-11 {
+        left: 91.66666667%;
+    }
+    .col-lg-push-10 {
+        left: 83.33333333%;
+    }
+    .col-lg-push-9 {
+        left: 75%;
+    }
+    .col-lg-push-8 {
+        left: 66.66666667%;
+    }
+    .col-lg-push-7 {
+        left: 58.33333333%;
+    }
+    .col-lg-push-6 {
+        left: 50%;
+    }
+    .col-lg-push-5 {
+        left: 41.66666667%;
+    }
+    .col-lg-push-4 {
+        left: 33.33333333%;
+    }
+    .col-lg-push-3 {
+        left: 25%;
+    }
+    .col-lg-push-2 {
+        left: 16.66666667%;
+    }
+    .col-lg-push-1 {
+        left: 8.33333333%;
+    }
+    .col-lg-push-0 {
+        left: auto;
+    }
+    .col-lg-offset-12 {
+        margin-left: 100%;
+    }
+    .col-lg-offset-11 {
+        margin-left: 91.66666667%;
+    }
+    .col-lg-offset-10 {
+        margin-left: 83.33333333%;
+    }
+    .col-lg-offset-9 {
+        margin-left: 75%;
+    }
+    .col-lg-offset-8 {
+        margin-left: 66.66666667%;
+    }
+    .col-lg-offset-7 {
+        margin-left: 58.33333333%;
+    }
+    .col-lg-offset-6 {
+        margin-left: 50%;
+    }
+    .col-lg-offset-5 {
+        margin-left: 41.66666667%;
+    }
+    .col-lg-offset-4 {
+        margin-left: 33.33333333%;
+    }
+    .col-lg-offset-3 {
+        margin-left: 25%;
+    }
+    .col-lg-offset-2 {
+        margin-left: 16.66666667%;
+    }
+    .col-lg-offset-1 {
+        margin-left: 8.33333333%;
+    }
+    .col-lg-offset-0 {
+        margin-left: 0%;
+    }
+}

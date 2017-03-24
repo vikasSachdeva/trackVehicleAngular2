@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{title}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content no-margin>
+    <ion-row>
+        <ion-col no-padding>
+            <div class="profile-bg">
+                <!--<div class="profile-content-bg">
+                    <div class="profile-info">
+                        <img [src]="sanitizer.bypassSecurityTrustUrl(user.picture)">
+                        <ion-icon ngHide="user.picture" ios="ios-person" md="md-person" style="font-size:113px; margin-top: -9px;" color="primary"></ion-icon>
+                    </div>
+                </div>-->
+                <button class="file-upload">
+                    <input type="file" class="file-input">
+                    <ion-icon class="fa fa-pencil fa-2x"></ion-icon>
+                </button>
+
+                <div class="profile-info">
+                    <img [src]="user.picture?sanitizer.bypassSecurityTrustUrl(user.picture):''">
+                    <!--<ion-icon ngHide="user.picture" ios="ios-person" md="md-person" style="font-size:113px; margin-top: -9px;" color="primary"></ion-icon>-->
+                </div>
+                <div class="profile-title" text-center>
+                    <h2 color="light" font-md no-padding margin-b-xs>{{user.contact_person}}</h2>
+                    <p color="light" font-sm no-margin>{{user.role}}</p>
+                </div>
+            </div>
+            <div class="profile-form" *ngIf="user.role=='vendor'">
+                <div class="min-container">
+
+                    <ion-list padding-h-lg>
+                        <ion-item class="transparent" no-margin no-padding>
+
+                            <ion-label fixed>Name</ion-label>
+                            <ion-input type="text" [(ngModel)]="user.contact_person"></ion-input>
+                            
+                        </ion-item>
+                        <ion-item class="transparent" no-margin no-padding>
+                            <ion-label fixed>Email Id</ion-label>
+                            <ion-input type="email" [disabled]="true" [(ngModel)]="user.contact_email "></ion-input>
+                        </ion-item>
+                        <ion-item class="transparent" no-margin no-padding>
+                            <ion-label fixed>Phone No</ion-label>
+                            <ion-input type="text" [(ngModel)]="user.contact_phone"></ion-input>
+
+                        </ion-item>
+                    </ion-list>
+                </div>
+            </div>
+            
+
+ <div class="profile-form" *ngIf="user.role !='vendor'">
+                <div class="min-container">
+
+                    <ion-list padding-h-lg>
+                        <ion-item class="transparent" no-margin no-padding>
+                            <ion-label fixed>Name</ion-label>
+                            <ion-input type="text" [(ngModel)]="user.name"></ion-input>
+                        </ion-item>
+                        <ion-item class="transparent" no-margin no-padding>
+                            <ion-label fixed>Email Id</ion-label>
+                            <ion-input type="email" [disabled]="true" [(ngModel)]="user.email"></ion-input>
+                        </ion-item>
+                        <ion-item class="transparent" no-margin no-padding>
+                            <ion-label fixed>Phone No</ion-label>
+                            <ion-input type="text" [(ngModel)]="user.mobile"></ion-input>
+                        </ion-item>
+                    </ion-list>
+                </div>
+            </div>
+
+
+        </ion-col>
+    </ion-row>
+</ion-content>
+<ion-footer padding-h-xs>
+    <button ion-button block (click)="saveSetting()">Save</button>
+</ion-footer>

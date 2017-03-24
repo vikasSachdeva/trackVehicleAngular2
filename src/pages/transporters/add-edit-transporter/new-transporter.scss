@@ -1,0 +1,21 @@
+new-user {
+
+  ion-select {
+    max-width: 100%;
+    text-align: right;
+    width: 100%;
+  }
+  .text-input-md {
+    text-align: left;
+    font-weight: 400;
+  }
+  ion-label {
+    overflow: initial;
+  }
+  .creatUser .item-md{padding-left:0px}
+
+ion-textarea textarea{ resize:none!important; } 
+.md-card-container ion-card{padding:0!important}
+  
+}
+

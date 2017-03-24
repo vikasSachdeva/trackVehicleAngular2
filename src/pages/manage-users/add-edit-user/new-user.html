@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>{{title}}</ion-title>
+
+        <!--<ion-buttons end>
+      <button ion-button>
+        <ion-icon name="md-person"></ion-icon>
+      </button>
+    </ion-buttons>-->
+ 
+        <ion-buttons end>
+            <button ion-button>
+            <ion-icon name="notifications" color="yellow"></ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content no-margin>
+    <div class="md-card-container">
+ <form [formGroup]="formFields" >
+    <div class="custom-card" padding-v-lg>
+      
+      <ion-item padding-b-sm padding-h-lg>
+          <ion-label floating><i class="fa fa-user" aria-hidden="true"></i> Name</ion-label>
+          <ion-input type="text" left text-left [(ngModel)]="user.name" name="name" formControlName="name" colo="silver-grey"></ion-input>
+      </ion-item>
+     
+      <ion-item padding-v-sm padding-h-lg>
+            <ion-label><i class="fa fa-users" aria-hidden="true"></i> Role</ion-label>
+            <ion-label> 
+                <p color="silver"  (click)="rolePopover($event)" text-right class="popover">
+                    <span color="{{user.role != '' ? 'royal':'secondary'}}"> {{user.role}}</span>
+                </p>
+            </ion-label>
+            <!--<ion-select [(ngModel)]="user.role" *ngIf="!user.role" class="drop-arrow">
+                <ion-option value="admin" selected>Admin</ion-option>
+                <ion-option value="supervisor">Supervisor</ion-option>
+                <ion-option value="vendor">Vendor</ion-option>
+                <ion-option value="security">Security</ion-option>
+            </ion-select>-->
+       </ion-item>
+
+        <ion-item padding-v-sm padding-h-lg>
+            <ion-label><i class="fa fa-check-circle" aria-hidden="true"></i> Status </ion-label>
+            <ion-select [(ngModel)]="user.status" name="status" formControlName="status" class="drop-arrow">
+                <ion-option  selected>Select Status</ion-option>
+                <ion-option value="activated" >Activate</ion-option>
+                <ion-option value="deactivated">Deactivate</ion-option>
+                <ion-option value="suspended">Suspended</ion-option>
+                <ion-option value="deleted">Deleted</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item padding-v-sm padding-h-lg>
+          <ion-label floating><i class="fa fa-address-book-o" aria-hidden="true"></i> Address</ion-label>
+          <ion-textarea left text-left [(ngModel)]="user.address" name="address" formControlName="address" ></ion-textarea>
+      </ion-item>
+
+      <ion-item padding-v-sm padding-h-lg>
+          
+          <ion-label floating><i class="fa fa-envelope" aria-hidden="true"></i> Email Address</ion-label>
+          <ion-input type="text" left text-left disabled="{{originalUser.email?true:false}}" [(ngModel)]="user.email" name="email" formControlName="email" ></ion-input>
+      </ion-item>
+
+      <ion-item padding-v-lg padding-h-lg>
+          <ion-label floating><i class="fa fa-mobile fa-lg" aria-hidden="true"></i> Mobile Number</ion-label>
+          <ion-input type="text" left text-left [(ngModel)]="user.mobile" name="mobile" formControlName="mobile"></ion-input>
+      </ion-item>
+
+      <ion-item padding-v-sm padding-h-lg *ngIf="!originalUser.email">
+          <ion-label floating><i class="fa fa-lock fa-lg" aria-hidden="true"></i> Password</ion-label>
+          <ion-input type="password" left text-left [(ngModel)]="user.password" name="password" formControlName="password"></ion-input>
+      </ion-item>
+
+  </div>
+
+ </form>
+    </div>
+</ion-content>
+<ion-footer padding-h-xs><button ion-button block [disabled]="!formFields.valid" (click)="saveUser()">Save</button></ion-footer>
+

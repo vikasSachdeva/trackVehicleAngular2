@@ -1,0 +1,169 @@
+manage-users {
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+        border-bottom-color: #dedede;
+        box-shadow: inset 0 -1px 0 0 #dedede;
+    }
+    ion-select {
+        max-width: 100%;
+        text-align: right;
+        width: 100%;
+    }
+    .text-input-md {
+        text-align: right;
+        font-weight: 400;
+    }
+    ion-label {
+        overflow: initial;
+    }
+    .rowheading {
+        color: #858585;
+        border-bottom: 1px solid #dedede;
+        font-size: 1.6rem;
+    }
+    .rowheading ion-col ion-label {
+        font-weight: bold
+    }
+    .userFilter {
+        padding-left: 0px
+    }
+    .rowcontent {
+        border-bottom: 1px solid #ededed;
+        font-size: 1.6rem;
+        font-size: 1.6rem;
+    }
+    .rowcontent:nth-child(odd) {
+        background: #f8f8f8
+    }
+    .searchbar {
+        display: block
+    }
+    .manageUser {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%
+    }
+    .manageUser ion-col[width-10] {
+        border-right: 1px solid #ededed;
+        margin-right: 5px
+    }
+    .manageUser .item-checkbox {
+        width: 35px;
+        float: left;
+        padding-left: 0px
+    }
+    .manageUser .item .fa-pencil {
+        width: 35px;
+        text-align: right;
+        margin-right: 0px;
+        font-size: 1.4em
+    }
+    .manageUser ion-item {
+        padding-left: 0px;
+        margin-right: 0px;
+        width: 100%
+    }
+    .item-md {
+        padding-left: 0px;
+        margin-right: 0px;
+        width: 100%
+    }
+    .manageUser .checkbox {
+        margin: -5px 20px 9px 4px!important
+    }
+    .manageUser ion-label {
+        margin: 6px 0px 6px 0px!important;
+    }
+    .scroll-content {
+        padding: 0px;
+        padding-bottom: 64px
+    }
+    
+    .activt-btn{ 
+        color:color($colors, primary);
+        background-color: rgba(color($colors, secondary),0.1);
+        border: 1px solid color($colors, secondary);
+        border-radius: 2px;
+        margin: 0px!important;
+        min-width: 80px;
+        height: 22px;
+        }
+
+        .activt-btn:hover{ 
+        color: color($colors, primary);
+        background-color: rgba(color($colors, secondary),0);
+        border: 1px solid color($colors, secondary);
+        border-radius: 2px;
+        }
+
+    .suspended-btn{
+        border-color: #8a87b7;
+        color: color($colors, danger);
+        background-color: rgba(color($colors, danger),0.05);
+        border: 1px solid rgba(color($colors, danger),0.5);
+        border-radius: 2px;
+        min-width: 80px;
+        height: 22px;
+    }
+
+    .suspended-btn:hover{
+        color: color($colors, danger);
+        border: 1px solid rgba(color($colors, danger),0.5);
+        background-color: rgba(color($colors, danger),0);
+        border-radius: 2px;
+    }
+
+
+    .reset-btn{
+        width: 22px; height:22px; 
+        // border: 1px solid rgba(color($colors, green),0.8);
+        background-color: rgba(color($colors, green),1);
+        text-align: center;
+        line-height: 22px;
+        margin: 2px;
+        }
+    .edit-btn{
+        width: 22px; height:22px; 
+        // border: 1px solid rgba(color($colors, orange),0.8);
+        background-color: rgba(color($colors, yellow),1);
+        text-align: center;
+        line-height: 22px;
+        margin: 2px;
+    }
+    .delete-btn{
+        width: 22px; height:22px; 
+        // border: 1px solid rgba(color($colors, danger),0.8);
+        background-color: rgba(color($colors, danger),1);
+        text-align: center;
+        line-height: 22px;
+        margin: 2px;
+    }
+
+    .edit-btn ion-icon, .reset-btn ion-icon, .delete-btn ion-icon{
+        font-size: 13px;
+    }
+
+    .action-row .item-inner{margin: 0px;padding:0!important;}
+    .status-box h2{text-align:right}
+    .action-box .delete-btn,.action-box .edit-btn,.action-box .reset-btn{float:right}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    // .clear-row{ clear: both; width: 100%; }
+    .clear-row{ clear: both; }
+    .action-box{ float:left; margin-left:13px;clear:both  }
+    .status-btn{float:left;}
+    .action-box .delete-btn,.action-box .edit-btn,.action-box .reset-btn{float:left}
+    .status-box{ display:none;}
+   
+}
+
+@media (max-width: 767px) {
+    .edit-box{float:right}
+    .edit-button{position: absolute; right: 10px;}
+    .clear-row{ clear: both; }
+    .action-box{ float:left; margin-left:13px;   }
+    .status-btn{float:right; padding-top: 8px;}
+    .status_mobile{float:right; margin-top:-6px}
+    .status-box{ display: none;}
+
+}
+}

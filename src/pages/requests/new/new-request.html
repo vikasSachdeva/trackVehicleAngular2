@@ -1,0 +1,90 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>New Vendor Request</ion-title>
+        <!--<ion-buttons end>
+            <button ion-button>
+                <ion-icon name="md-person"></ion-icon>
+            </button>
+        </ion-buttons>-->
+        <ion-buttons end>
+            <button ion-button>
+                <ion-icon name="notifications" color="yellow"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content no-margin>
+    <div class="md-card-container">
+        <form [formGroup]="formFields" >
+            <div class="custom-card" padding-b-lg>
+                <h2 color="primary" padding-h-lg padding-t-lg no-margin>
+                    <i class="fa fa-truck fa-flip-horizontal" aria-hidden="true"></i> Vehicles Detail
+                </h2>
+
+                <ion-item padding-h-lg>
+                    <ion-label floating no-padding>Vehicles Type</ion-label>
+                    <ion-select [(ngModel)]="request.vehicle_type" placeholder="Select" name="vehicle_type" formControlName="vehicle_type" class="drop-arrow" text-left>
+                        <ion-option selected>Select Type</ion-option>
+                        <ion-option >TATA - 407</ion-option>
+                        <ion-option >TATA 907</ion-option>
+                    </ion-select>
+                </ion-item>
+                 <ion-item padding-h-lg>
+                    <ion-label floating no-padding>No. of Vehicles</ion-label>
+                    <ion-input type="text" [(ngModel)]="request.vehicle_count" name="vehicle_count" formControlName="vehicle_count"></ion-input>
+                </ion-item>
+            </div>
+
+           <div class="custom-card" padding-b-lg>
+                <h2 color="primary" padding-h-lg padding-t-lg no-margin>
+                   <ion-icon ios="ios-pin" md="md-pin" item-left></ion-icon> Source
+                </h2>
+
+                <ion-item padding-h-lg>
+                    <ion-label floating no-padding>
+                        Location</ion-label>
+                        <ion-select [(ngModel)]="request.source_plant_code" placeholder="Select" name="source_plant_code" formControlName="source_plant_code" class="drop-arrow" text-left>
+                        <ion-option *ngFor="let source of commonServices.sources" [value]="source.plant_code" [selected]="source.plant_code">{{source.plant_name}}</ion-option>
+                    </ion-select>
+                    <!--<ion-select [(ngModel)]="request.depart_location" placeholder="Select" name="depart_location" class="drop-arrow" text-left>
+                        <ion-option *ngFor="let depot of commonServices.depots" [value]="depot.plant_code" [selected]="depot.plant_code==request.depart_location">{{depot.plant_name}}</ion-option>
+                    </ion-select>-->
+                </ion-item>
+                <ion-item padding-h-lg>
+                    <ion-label floating no-padding class="calendar">Reported By</ion-label>
+                    <!--<ion-input type="text" [(ngModel)]="request.expected_datetime" name="expected_datetime"></ion-input>-->
+
+                    <ion-datetime displayFormat="DD-MMMM-YYYY" pickerFormat="DD-MMMM-YYYY" [(ngModel)]="request.depart_datetime" name="depart_datetime"  formControlName="depart_datetime"></ion-datetime>
+
+                </ion-item>
+            </div>
+            <div class="custom-card" padding-b-lg>
+                <h2 color="primary" padding-h-lg padding-t-lg no-margin>
+                    <ion-icon ios="ios-locate" md="md-locate" item-left></ion-icon> Destination
+                </h2>
+                <ion-item padding-h-lg>
+                    <ion-label floating no-padding>
+                        Location</ion-label>
+                        <ion-select [(ngModel)]="request.destination_plant_code" placeholder="Select" name="destination_plant_code" formControlName="destination_plant_code" class="drop-arrow" text-left>
+                        <ion-option *ngFor="let depot of (commonServices.depots | searchAnywhere:'orderBy':'plant_name')" [value]="depot.plant_code" [selected]="depot.plant_code">{{depot.plant_name}}</ion-option>
+                    </ion-select>
+                    <!--<ion-select [(ngModel)]="request.delivery_location" placeholder="Select" name="depart_location" class="drop-arrow" text-left>
+                        <ion-option *ngFor="let source of commonServices.sources" [value]="source.plant_code" [selected]="source.plant_code==request.depart_location">{{source.plant_name}}</ion-option>
+                    </ion-select>-->
+                </ion-item>
+                <ion-item padding-h-lg>
+
+                    <ion-label floating no-padding class="calendar">Reported By</ion-label>                    
+                    <ion-datetime displayFormat="DD-MMMM-YYYY" pickerFormat="DD-MMMM-YYYY" [(ngModel)]="request.expected_datetime" name="expected_datetime" formControlName="expected_datetime"></ion-datetime>
+
+                </ion-item>
+            </div>
+        </form>
+    </div>
+</ion-content>
+<ion-footer padding-h-xs>
+    <button ion-button color="primary" [disabled]="!formFields.valid" (click)="saveRequest(requestData)" block>Submit</button>
+</ion-footer>

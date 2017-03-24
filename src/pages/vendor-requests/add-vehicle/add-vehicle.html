@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Add Vehicle Details</ion-title>
+
+        <!--<ion-buttons end>
+            <button ion-button>
+                <ion-icon name="md-person"></ion-icon>
+            </button>
+        </ion-buttons>-->
+
+        <ion-buttons end>
+            <button ion-button>
+                <ion-icon name="notifications" color="yellow"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content no-margin>
+
+    <div class="vehicle_detail custom-card" padding-md>
+        <div class=" col-sm-12 f-left" *ngFor="let vehicle of vehicles;let i=index;" padding-v-lg>
+            <span>{{errorMsg[i] ? errorMsg[i].msg:''}}</span>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 color="primary" no-margin no-padding font-lg>Vehicle {{i+1}}</h2>
+                </div>
+                <div class="col-sm-12 col-md-4 col-md-4">
+                    <ion-item no-padding class="custom-input-border transparent">
+                        <ion-label floating font-sm>Vehicle Number</ion-label>
+                        <ion-input type="text" left text-left [(ngModel)]="vehicle.vehicle_no" font-sm></ion-input>
+                    </ion-item>
+                </div>
+                <div class="col-sm-12 col-md-4 col-md-4">
+                    <ion-item no-padding class="custom-input-border transparent">
+                        <ion-label floating font-sm>Driver Name</ion-label>
+                        <ion-input type="text" left text-left [(ngModel)]="vehicle.driver_name" font-sm></ion-input>
+                    </ion-item>
+                </div>
+                <div class="col-sm-12 col-md-4 col-md-4">
+                    <ion-item no-padding class="custom-input-border transparent">
+                        <ion-label floating font-sm>Driver Number</ion-label>
+                        <ion-input type="text" left text-left [(ngModel)]="vehicle.driver_number" font-sm></ion-input>
+                    </ion-item>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-content>
+<ion-footer padding-h-xs>
+    <button (click)="saveVehicle()" ion-button color="primary" block>Submit</button>
+</ion-footer>
